@@ -191,3 +191,7 @@ a:hover {
 .contact-section {
   height: 100%;
 }
+
+.address {
+  font-size: 18;
+}

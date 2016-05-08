@@ -34,19 +34,10 @@
             <div class="cover-container">
                 <div class="masthead clearfix">
                     <div class="inner" ng-app="myApp" ng-controller="navigationController as naviCtrl">
-                        <h3 class="masthead-brand">Guohao Yan</h3>
+                        <h3 class="masthead-brand">Guohao Yan<br><p class="address">Toronto, CA</p></h3>
                         <ul class="nav masthead-nav">
-                            <li class="active">
-                                <i class="fa fa-home"></i><a href="#page-top">{{home}}</a>
-                            </li>
-
-                            <li>
-                                <i class="fa fa-file-text-o"></i><a href="#resume">{{resume}}</a>
-                            </li>
-
-                            <li>
-                                <i class="fa fa-phone"></i><a href="#contact" ng-click="active">{{contact}}</a>
-                            </li>
+                            <li ng-repeat="page in pages" ng-class="{active : isSelected(page)}">
+                              <i class="{{page.icon}}"></i><a href="" ng-click="setSelected(page)" smooth-scroll target="{{page.anchor}}">{{page.name}}</a>
                         </ul>
                     </div>
                 </div>

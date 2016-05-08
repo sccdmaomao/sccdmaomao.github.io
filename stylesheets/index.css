@@ -1,11 +1,12 @@
 html,
 body {
-	background-image: url("/images/background.jpg");
+  background-image: url("/images/background.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
+
+  width: 100%;
   height: 100%;
   background-color: #060;
   color: #fff;
@@ -110,7 +111,6 @@ a:hover {
   }
 }
 
-
 /*
  * Cover
  */
@@ -131,8 +131,8 @@ a:hover {
 .mastfoot {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
-}
 
+}
 
 /*
  * Affix and center
@@ -164,6 +164,30 @@ a:hover {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+  width: 700px;
   }
+}
+
+.empty-space {
+  height: 30%;
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
+.myhidden {
+  visibility: hidden;
+  padding-bottom: 20%;
+}
+
+
+.intro-section {
+  height: 100%;
+}
+
+.resume-section {
+  height: 100%;
+}
+
+.contact-section {
+  height: 100%;
 }

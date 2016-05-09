@@ -17,7 +17,10 @@
     <script type="text/javascript" src="javascripts/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="webpageModule.js"></script>
     <script type="text/javascript" src="javascripts/navigationController.js"></script>
+    <script type="text/javascript" src="javascripts/contactPanelController.js"></script>
 
 
     <title>Guohao Yan's Webpage </title>
@@ -27,10 +30,10 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="webpageModule">
 
 
-    <div class="site-wrapper" ng-app="myApp" ng-controller="navigationController as naviCtrl">
+    <div class="site-wrapper" ng-controller="navigationController as naviCtrl">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="masthead clearfix">
@@ -54,7 +57,7 @@
             more</a></p>
                 </div>
 
-                <div class="mastfoot">
+                <!-- <div class="mastfoot">
                     <div>
                         <p>
                             <a href="https://github.com/sccdmaomao" class="avatar"><img src="https://avatars0.githubusercontent.com/u/8729020?v=3&amp;s=60" width="48" height="48"></a>
@@ -62,7 +65,7 @@
                         <p>View <a href="https://github.com/sccdmaomao">Guohao Yan</a> on <a href="https://www.github.com">GitHub</a></p>
                         <p> 2016 Guohao Yan ~ <a href="http://getbootstrap.com/">Bootstrap, font-awesome</a></p>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -89,11 +92,12 @@
         </div>
     </div>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" ng-controller="contactPanelController as contactCtrl">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div>
                     <h1 id="contact" class="cover-heading">Contact</h1>
+                    {{name}}
                 </div>
             </div>
         </div>

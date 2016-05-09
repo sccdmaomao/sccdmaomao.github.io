@@ -1,4 +1,4 @@
-angular.module('myApp', ['angularSmoothscroll']).controller('navigationController', function($scope) {
+angular.module('navigation', ['angularSmoothscroll']).controller('navigationController', function($scope) {
 
     $scope.pages = [{
             name: "Home Page",

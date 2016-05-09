@@ -9,7 +9,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/homePage.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
 
     <!-- JavaScripts -->
     <script type="text/javascript" src="javascripts/angular.min.js"></script>
@@ -29,15 +30,15 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" ng-app="myApp" ng-controller="navigationController as naviCtrl">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="masthead clearfix">
-                    <div class="inner" ng-app="myApp" ng-controller="navigationController as naviCtrl">
+                    <div class="inner">
                         <h3 class="masthead-brand">Guohao Yan<br><p class="address">Toronto, CA</p></h3>
                         <ul class="nav masthead-nav">
                             <li ng-repeat="page in pages" ng-class="{active : isSelected(page)}">
-                              <i class="{{page.icon}}"></i><a href="" ng-click="setSelected(page)" smooth-scroll target="{{page.anchor}}">{{page.name}}</a>
+                                <i class="{{page.icon}}"></i><a href="" ng-click="setSelected(page)" smooth-scroll target="{{page.anchor}}">{{page.name}}</a>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                         "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."
                     </p>
 
-                    <p class="lead"><a class="btn btn-lg btn-info" href="pages/Resume.html">Learn
+                    <p class="lead"><a class="btn btn-lg btn-info" href="" ng-click="setSelected(pages[1])" smooth-scroll target="{{pages[1].anchor}}">Learn
             more</a></p>
                 </div>
 
@@ -70,23 +71,29 @@
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <divclass="inner cover">
-                    <p id="resume" class="myhidden">Hidden</p>
-                    <h1 class="cover-heading">Resume</h1>
-
+                <div class="inner cover">
+                    <h1 id="projects" class="cover-heading">Projects</h1>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="inner cover">
+                    <h1 id="resume" class="cover-heading">Resume</h1>
+                    <embed class="preview" src="/resources/files/Guohao Yan.pdf" width="800px" height="2100px">
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div>
-                    <p id="contact" class="myhidden">Hidden</p>
-                    <h1 class="cover-heading">Contact</h1>
-
-
+                    <h1 id="contact" class="cover-heading">Contact</h1>
                 </div>
             </div>
         </div>

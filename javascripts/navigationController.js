@@ -5,7 +5,11 @@ angular.module('myApp', ['angularSmoothscroll']).controller('navigationControlle
             icon: "fa fa-home",
             anchor: "page-top"
         },
-
+        {
+          name: "Projects",
+          icon: "fa fa-paper-plane-o",
+          anchor: "projects"
+        },
         {
             name: "Resume",
             icon: "fa fa-file-text-o",
@@ -27,12 +31,6 @@ angular.module('myApp', ['angularSmoothscroll']).controller('navigationControlle
     $scope.setSelected = function(page) {
         $scope.selected = page;
     }
-
-
-    var home = document.getElementById("page-top");
-    var resume = document.getElementById("resume");
-    var contact = document.getElementById("contact");
-
 });
 
 

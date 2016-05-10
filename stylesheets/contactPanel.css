@@ -1,0 +1,21 @@
+.img-container {
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* resize images */
+
+.img-container img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.redirections {
+  padding-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+    list-style-type: none;
+}

@@ -7,10 +7,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <!-- CSS -->
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="stylesheets/homePage.css">
     <link rel="stylesheet" href="stylesheets/navigation.css">
+    <link rel="stylesheet" href="stylesheets/contactPanel.css">
 
     <!-- JavaScripts -->
     <script type="text/javascript" src="lib/angular.min.js"></script>
@@ -84,9 +86,9 @@
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <div class="inner cover">
+                <div class="cover">
                     <h1 id="resume" class="cover-heading">Resume</h1>
-                    <embed class="preview" src="/resources/files/Guohao Yan.pdf" width="800px" height="2100px">
+                    <embed class="preview" src="/resources/files/Guohao Yan.pdf" width="700px" height="1050px">
                 </div>
             </div>
         </div>
@@ -95,9 +97,16 @@
     <div class="site-wrapper" ng-controller="contactPanelController as contactCtrl">
         <div class="site-wrapper-inner">
             <div class="cover-container">
-                <div>
+                <div class="cover">
                     <h1 id="contact" class="cover-heading">Contact</h1>
-                    {{name}}
+                    <ul class="redirections">
+                        <li ng-repeat="method in contacts">
+                            <div class="img-container">
+                                <a target="_blank" href="{{method.link}}">
+                                    <img src="{{method.img}}" alt="{{method.name}}">
+                                </a>
+                            </div>
+                    </ul>
                 </div>
             </div>
         </div>

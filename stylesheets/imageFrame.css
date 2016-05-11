@@ -1,10 +1,10 @@
-redirect {
+.redirect {
   display: block;
 }
 
 
 .link-frame {
-  
+
 }
 
 .link-frame ul{
@@ -21,13 +21,19 @@ redirect {
 
 .link-frame .title {
   background-color: rgb(92, 103, 139);
-  border-style: none none ridge none;;
+  border-style: none none ridge none;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 .link-frame .image-container {
   width: 150px;
   height: 100px;
   border-style: ridge;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
 }
 
 .link-frame .image-container img {

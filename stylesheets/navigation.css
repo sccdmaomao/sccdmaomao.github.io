@@ -31,8 +31,9 @@ a:hover {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  /* sectin divider */
+  -webkit-box-shadow: inset 0 0 100px rgb(216,216,216) ;
+          box-shadow: inset 0 0 100px rgb(216,216,216) ;
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -69,20 +70,22 @@ a:hover {
   font-size: 16px;
   font-weight: bold;
   color: #000000; /* IE8 proofing */
-  color: rgba(0,0,0,.5);
+  color: rgba(0,0,0,.7);
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
+  /* Navigation icon bottom line color */
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: rgba(255,255,255,.5);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
+  /* navigation icon text color */
   color: rgba(0,0,0,.9);
-  border-bottom-color: rgba(0,0,0,.5);
+  border-bottom-color: rgba(0,0,0,.7);
 }
 
 @media (min-width: 768px) {

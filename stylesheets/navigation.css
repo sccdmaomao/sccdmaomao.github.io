@@ -68,8 +68,8 @@ a:hover {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.95);
+  color: #000000; /* IE8 proofing */
+  color: rgba(0,0,0,.5);
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
@@ -81,8 +81,8 @@ a:hover {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: rgba(0,0,0,.9);
+  border-bottom-color: rgba(0,0,0,.5);
 }
 
 @media (min-width: 768px) {

@@ -78,7 +78,7 @@ a:hover {
   background-color: transparent;
   /* Navigation icon bottom line color */
   border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.5);
+  border-bottom-color: rgba(0,0,0,.3);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -150,6 +150,6 @@ a:hover {
   .masthead,
   .mastfoot,
   .cover-container {
-  width: 700px;
+  width: 900px;
   }
 }

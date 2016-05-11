@@ -44,7 +44,7 @@
                         <h3 class="masthead-brand">Guohao Yan<br><p class="address">Toronto, CA</p></h3>
                         <ul class="nav masthead-nav">
                             <li ng-repeat="page in pages" ng-class="{active : isSelected(page)}">
-                                <i class={{page.icon}}></i><a class="hvr-grow-shadow" href="" ng-click="setSelected(page)" smooth-scroll target="{{page.anchor}}">{{page.name}}</a>
+                                <i class="{{page.icon}}"></i><a class="hvr-grow-shadow" href="" ng-click="setSelected(page)" smooth-scroll target="{{page.anchor}}">{{page.name}}</a>
                         </ul>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                                 <div class="image-container">
                                     <a class="redirect" target="_blank" href="{{method.link}}">
                                         <div class="title">{{method.name}}</div>
-                                        <img src={{method.img}} alt="{{method.name}}" />
+                                        <img ng-src="{{method.img}}" alt="{{method.name}}" />
                                     </a>
                                 </div>
                             </li>

@@ -2,6 +2,9 @@
   display: block;
 }
 
+.title {
+  font-family: Tahoma;
+}
 
 .link-frame {
 
@@ -13,27 +16,24 @@
 }
 
 .link-frame li{
-  padding-top: 15px;
-  margin-right: 5px;
+  padding-top: 40px;
+  margin-right: 20px;
   list-style-type: none;;
   display: inline-table;;
 }
 
 .link-frame .title {
-  background-color: rgb(92, 103, 139);
-  border-style: none none ridge none;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  background-color: rgba(92, 103, 139,.9);
+
 }
 
 .link-frame .image-container {
   width: 150px;
   height: 100px;
   border-style: ridge;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  -webkit-border-radius: 0px 0px 15px 15px;
+  -moz-border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .link-frame .image-container img {

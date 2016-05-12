@@ -25,6 +25,9 @@
     <script type="text/javascript" src="javascripts/navigationController.js"></script>
     <script type="text/javascript" src="javascripts/contactPanelController.js"></script>
 
+    <!-- Directives -->
+    <script type="text/javascript" src="directives/listView/listView.js"></script>
+
 
     <title>Guohao Yan's Webpage </title>
     <meta name="description" content="This is my personal web page, contains detailed introduction about myself.">
@@ -89,7 +92,9 @@
             <div class="cover-container">
                 <div class="cover">
                     <h1 id="resume" class="cover-heading">Resume</h1>
-                    <embed class="preview" src="/resources/files/Guohao Yan.pdf" width="700px" height="1050px">
+                    <div class="preview">
+                        <iframe src="/resources/files/Guohao Yan.pdf" height="100%" width="100%"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,18 +106,7 @@
                 <div class="cover">
                     <h1 id="contact" class="cover-heading">Contact</h1>
                     <!-- chrome most visit style -->
-                    <div class="link-frame">
-                        <ul>
-                            <li ng-repeat="method in contacts">
-                                <div class="image-container">
-                                    <a class="redirect" target="_blank" href="{{method.link}}">
-                                        <div class="title">{{method.name}}</div>
-                                        <img ng-src="{{method.img}}" alt="{{method.name}}" />
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <list-view items="contacts"></list-view>
                 </div>
             </div>
         </div>

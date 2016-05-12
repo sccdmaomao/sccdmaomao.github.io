@@ -23,5 +23,6 @@ body {
 }
 
 .preview {
-  margin-top: 10%;
+  height: 800px;
+  margin-top: 20%;
 }

@@ -32,8 +32,7 @@ a:hover {
   height: 100%; /* For at least Firefox */
   min-height: 100%;
   /* sectin divider */
-  -webkit-box-shadow: inset 0 0 100px rgb(216,216,216) ;
-          box-shadow: inset 0 0 100px rgb(216,216,216) ;
+
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -102,7 +101,7 @@ a:hover {
  */
 
 .cover {
-  padding: 0 0px;
+
 }
 .cover .btn-lg {
   padding: 10px 20px;

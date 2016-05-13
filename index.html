@@ -23,6 +23,7 @@
     <script type="text/javascript" src="javascripts/webpageModule.js"></script>
     <script type="text/javascript" src="javascripts/navigationController.js"></script>
     <script type="text/javascript" src="javascripts/contactPanelController.js"></script>
+    <script type="text/javascript" src="javascripts/projectPanelController.js"></script>
 
     <!-- Directives -->
     <script type="text/javascript" src="directives/listView/listView.js"></script>
@@ -76,11 +77,12 @@
         </div>
     </div>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" ng-controller="projectPanelController as projectCtrl">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="inner cover">
                     <h1 id="projects" class="cover-heading">Projects</h1>
+                    <list-view items="projects"></list-view>
                 </div>
             </div>
         </div>

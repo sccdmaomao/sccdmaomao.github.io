@@ -1,39 +1,32 @@
 .redirect {
-  display: block;
+    display: block;
 }
-
 .title {
-  font-family: Tahoma;
+    font-family: Tahoma;
 }
-
-.link-frame {
-
+.link-frame {}
+.link-frame ul {
+    list-style-type: none;
+    display: inline;
 }
-
-.link-frame ul{
-  list-style-type: none;
-  display: inline;
+.link-frame li {
+    padding-top: 40px;
+    margin-right: 50px;
+    list-style-type: none;
+    ;
+    display: inline-table;
+    ;
 }
-
-.link-frame li{
-  padding-top: 40px;
-  margin-right: 20px;
-  list-style-type: none;;
-  display: inline-table;;
-}
-
 .link-frame .title {
-  background-color: rgba(92, 103, 139,.9);
-
+    background-color: rgba(92, 103, 139, .9);
 }
-
 .link-frame .image-container {
-  width: 150px;
-  height: 100px;
-  border-style: ridge;
+    width: 250px;
+    height: 150px;
+    border-style: ridge;
 }
-
 .link-frame .image-container img {
-  width: 45%;
-  height: auto;
+    margin-top: 10px;
+    width: 45%;
+    height: auto;
 }

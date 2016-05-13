@@ -3,6 +3,6 @@ angular.module('projectPanel', []).controller('projectPanelController', function
     $scope.projects = [{
         "name": "JavaFX PasswordManager",
         "img": imagePath + "javaFX.png",
-        "link": "https://github.com/sccdmaomao/JavaFX-PasswordManager"
+        "link": "http://sccdmaomao.github.io/JavaFX-PasswordManager/"
     }];
 });

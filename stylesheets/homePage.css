@@ -26,3 +26,11 @@ body {
   height: 800px;
   margin-top: 20%;
 }
+
+a {
+    text-decoration: none !important;
+}
+
+h1, h2, h3 {
+  font-family: 'Corben', Georgia, Times, serif;
+}

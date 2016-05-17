@@ -1,27 +1,22 @@
 angular.module('navigation', ['angularSmoothscroll']).controller('navigationController', function($scope) {
 
     $scope.pages = [{
-            name: "Home Page",
-            icon: "fa fa-home",
-            anchor: "page-top"
-        },
-        {
-          name: "Projects",
-          icon: "fa fa-paper-plane-o",
-          anchor: "projects"
-        },
-        {
-            name: "Resume",
-            icon: "fa fa-file-text-o",
-            anchor: "resume"
-        },
-
-        {
-            name: "Contact",
-            icon: "fa fa-phone",
-            anchor: "contact"
-        }
-    ];
+        name: "Home Page",
+        icon: "fa fa-home",
+        anchor: "page-top"
+    }, {
+        name: "Projects",
+        icon: "fa fa-paper-plane-o",
+        anchor: "projects"
+    }, {
+        name: "Resume",
+        icon: "fa fa-file-text-o",
+        anchor: "resume"
+    }, {
+        name: "Contact",
+        icon: "fa fa-phone",
+        anchor: "contact"
+    }];
 
     $scope.selected = $scope.pages[0];
     $scope.isSelected = function(page) {
@@ -31,6 +26,28 @@ angular.module('navigation', ['angularSmoothscroll']).controller('navigationCont
     $scope.setSelected = function(page) {
         $scope.selected = page;
     }
+
+    // Set selected in nav bar if user scrolls
+    $(function() {
+        $(window).scroll(function() {
+            var height = $(window).scrollTop() + $(window).height() / 2;
+            var home = $('#page-top').position().top;
+            var project = $('#projects').position().top;
+            var resume = $('#resume').position().top;
+            var contact = $('#contact').position().top;
+
+            if (height > contact) {
+                $scope.selected = $scope.pages[3];
+            } else if (height > resume) {
+                $scope.selected = $scope.pages[2];
+            } else if (height > project) {
+                $scope.selected = $scope.pages[1];
+            } else if (height > home) {
+                $scope.selected = $scope.pages[0];
+            }
+            $scope.$apply(); // notify to execute angular digest cycle
+        });
+    });
 });
 
 

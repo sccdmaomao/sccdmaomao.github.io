@@ -1,6 +1,5 @@
 angular.module('listView', [])
     .controller('listViewController', function($scope) {
-
     })
     .directive('listView', function() {
         function link(scope, element, attrs) {

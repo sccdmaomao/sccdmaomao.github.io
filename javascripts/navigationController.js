@@ -46,6 +46,9 @@ angular.module('navigation', ['angularSmoothscroll']).controller('navigationCont
                 $scope.selected = $scope.pages[0];
             }
             $scope.$apply(); // notify to execute angular digest cycle
+            // change focus
+            var id = $scope.selected['anchor'];
+            $('#'+id).focus();
         });
     });
 });

@@ -1,0 +1,10 @@
+.root {
+  height: 80px;
+  background-color: skyblue;
+  span {
+    padding-right: 20px;
+    &:active {
+      color: yellowgreen;
+    }
+  }
+}

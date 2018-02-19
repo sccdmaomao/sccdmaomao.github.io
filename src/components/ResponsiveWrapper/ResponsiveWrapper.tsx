@@ -4,7 +4,7 @@ import styles from './ResponsiveWrapper.scss'
 
 interface ResponsiveWrapperProps {
   className?: string
-  children: JSX.Element
+  children: JSX.Element[]
 }
 
 const ResponsiveWrapper = (props: ResponsiveWrapperProps) => {

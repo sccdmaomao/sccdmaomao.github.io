@@ -16,6 +16,7 @@
     "apollo-cache-inmemory": "^1.1.1",
     "apollo-client": "^2.0.3",
     "apollo-link-http": "^1.2.0",
+    "awesome-typed-sass-modules": "^1.0.2",
     "classnames": "^2.2.5",
     "graphql": "^0.12.3",
     "graphql-tag": "^2.5.0",
@@ -29,6 +30,7 @@
     "postcss-loader": "^2.0.9",
     "react": "^16.2.0",
     "react-apollo": "^2.0.1",
+    "react-bootstrap": "^0.32.1",
     "react-cookie": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-intl": "^2.4.0",
@@ -93,25 +95,25 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepush": "yarn test",
-    "dev": "webpack-dev-server --port 8000",
+    "generate:types": "atsm -p src/**/*.scss",
+    "dev": "yarn generate:types ; webpack-dev-server --port 8000",
     "compile": "webpack",
-    "build:prod":
-      "NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
-    "build:prod:quiet":
-      "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
+    "build:prod": "NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
+    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
     "test": "jest --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build:stats":
-      "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
-    "optimize-svg":
-      "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
-    "reactify-svg":
-      "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
+    "build:stats": "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
+    "optimize-svg": "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
+    "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
     "svg": "yarn optimize-svg && yarn reactify-svg",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
   "lint-staged": {
-    "*.{ts,tsx,css}": ["yarn lint", "prettier --write", "git add"]
+    "*.{ts,tsx,css}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

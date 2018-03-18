@@ -3,10 +3,8 @@ import { ApolloProvider } from 'react-apollo'
 import { CookiesProvider } from 'react-cookie'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { HomePage, NotFound } from 'routes'
-import NavBar from './components/NavBar'
 import { client, store } from './store/initApp'
+import App from './App'
 
 const locale = 'en'
 /* tslint:disable */
@@ -22,17 +20,7 @@ const AppContainer = () => {
       <Provider store={store}>
         <CookiesProvider>
           <IntlProvider locale={locale} messages={translations} key={locale}>
-            <div style={{ backgroundColor: '#7FFFD4' }}>
-              <NavBar />
-              <Router>
-                <Switch>
-                  <Route path="/" exact component={HomePage} />
-                  <Route path="/projects" component={HomePage} />
-                  <Route path="/contact" component={HomePage} />
-                  <Route path="*" component={NotFound} />
-                </Switch>
-              </Router>
-            </div>
+            <App />
           </IntlProvider>
         </CookiesProvider>
       </Provider>

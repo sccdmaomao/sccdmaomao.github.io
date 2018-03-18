@@ -76,8 +76,7 @@ module.exports = {
       {
         // required config for react-flexbox-grid
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
-        include: /flexboxgrid/
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,

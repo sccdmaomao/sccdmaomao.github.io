@@ -1,20 +1,37 @@
 import React from 'react'
-import Nav from 'react-bootstrap/lib/Nav'
-import NavItem from 'react-bootstrap/lib/NavItem'
+import { Link } from 'react-router-dom'
+import styles from './NavBar.scss'
 
-const NavBar = ({ onClick }) => {
+const navItems = [
+  {
+    name: 'Home',
+    url: '/',
+    eventKey: 1
+  },
+  {
+    name: 'Projects',
+    url: '/projects',
+    eventKey: 2
+  },
+  {
+    name: 'Contact',
+    url: '/contacts',
+    eventKey: 3
+  }
+]
+
+const NavBar = ({ onClick, activeKey }) => {
+  const renderNavItem = items =>
+    items.map(item => (
+      <Link key={`navItem-${item.eventKey}`} to={item.url}>
+        {item.name}
+      </Link>
+    ))
+
   return (
-    <Nav bsStyle="pills" activeKey={1} onSelect={onClick}>
-      <NavItem eventKey={1} href="/home">
-        NavItem 1 content
-      </NavItem>
-      <NavItem eventKey={2} title="Item">
-        NavItem 2 content
-      </NavItem>
-      <NavItem eventKey={3} disabled>
-        NavItem 3 content
-      </NavItem>
-    </Nav>
+    <div className={styles.navContainer}>
+      <nav className={styles.navBar}>{renderNavItem(navItems)}</nav>
+    </div>
   )
 }
 

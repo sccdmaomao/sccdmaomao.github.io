@@ -3,9 +3,8 @@ import { ApolloProvider } from 'react-apollo'
 import { CookiesProvider } from 'react-cookie'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
-import { client, store } from './store/initApp'
 import App from './App'
-
+import { client, store } from './store/initApp'
 const locale = 'en'
 /* tslint:disable */
 const translations = require(`./i18n/${locale}.json`)

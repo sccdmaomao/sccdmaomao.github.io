@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { Segment } from 'semantic-ui-react'
 import styles from './NavBar.scss'
 
 const navItems = [
@@ -20,18 +21,31 @@ const navItems = [
   }
 ]
 
+const isActive = e => {
+  if (e) {
+    return e.path === location.pathname || location.pathname === ''
+  }
+  return false
+}
+
 const NavBar = ({ onClick, activeKey }) => {
   const renderNavItem = items =>
     items.map(item => (
-      <Link key={`navItem-${item.eventKey}`} to={item.url}>
+      <NavLink
+        key={`navItem-${item.eventKey}`}
+        to={item.url}
+        className={styles.linkText}
+        activeClassName={styles.activeLink}
+        isActive={isActive}
+      >
         {item.name}
-      </Link>
+      </NavLink>
     ))
 
   return (
-    <div className={styles.navContainer}>
+    <Segment className={styles.navContainer}>
       <nav className={styles.navBar}>{renderNavItem(navItems)}</nav>
-    </div>
+    </Segment>
   )
 }
 

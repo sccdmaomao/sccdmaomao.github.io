@@ -1,8 +1,8 @@
 import React from 'react'
-// import styles from './HomePage.scss'
+import styles from './HomePage.scss'
 
 const HomePage = () => {
-  return <div>hi</div>
+  return <div className={styles.home}>hi</div>
 }
 
 export default HomePage

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { HomePage, NotFound } from 'routes'
-import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HomePage, NotFound } from 'routes'
 import { Grid, Rail, Segment, Sticky } from 'semantic-ui-react'
+import styles from './App.scss'
+import NavBar from './components/NavBar'
 
 interface AppState {
   contextRef: any
@@ -16,52 +17,37 @@ class App extends Component<{}, AppState> {
     }
   }
 
-  private handleRef = contextRef => this.setState({ contextRef })
-
   public render() {
     const { contextRef } = this.state
+    const offsetPx = 10
     return (
-      <div style={{ backgroundColor: '#DFDCDC' }}>
+      <div style={{ backgroundColor: '#DFDCDC', padding: `${offsetPx}px` }}>
         <Router>
-          <Grid centered columns={3}>
+          <Grid centered columns={2}>
             <Grid.Column>
               <div ref={this.handleRef}>
                 <Segment>
-                  <Rail position="left">
-                    <Sticky context={contextRef}>
-                      <Segment>hi</Segment>
+                  <Rail className={styles.rail} position="left">
+                    <Sticky context={contextRef} offset={offsetPx}>
+                      <NavBar />
                     </Sticky>
                   </Rail>
-
-                  <Rail position="right">
-                    <Sticky context={contextRef}>hi2</Sticky>
-                  </Rail>
+                  <Switch>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/projects" component={HomePage} />
+                    <Route path="/contact" component={HomePage} />
+                    <Route path="*" component={NotFound} />
+                  </Switch>
                 </Segment>
               </div>
             </Grid.Column>
           </Grid>
-
-          {/* <Grid centered columns={2}>
-            <Grid.Column>
-              <div ref={this.handleRef}>
-                <Rail position="left">
-                  <Sticky context={contextRef}>
-                    <NavBar />
-                  </Sticky>
-                </Rail>
-                <Switch>
-                  <Route path="/" exact component={HomePage} />
-                  <Route path="/projects" component={HomePage} />
-                  <Route path="/contact" component={HomePage} />
-                  <Route path="*" component={NotFound} />
-                </Switch>
-              </div>
-            </Grid.Column>
-          </Grid> */}
         </Router>
       </div>
     )
   }
+
+  private handleRef = contextRef => this.setState({ contextRef })
 }
 
 export default App

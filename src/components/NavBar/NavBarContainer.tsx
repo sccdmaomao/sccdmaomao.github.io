@@ -13,16 +13,16 @@ class NavBarContainer extends Component<{}, NavBarState> {
     }
   }
 
+  public render() {
+    const { activeKey } = this.state
+    return <NavBar onClick={this.onItemClick} activeKey={activeKey} />
+  }
+
   private onItemClick = (e, key) => {
     e.preventDefault()
     this.setState({
       activeKey: key
     })
-  }
-
-  public render() {
-    const { activeKey } = this.state
-    return <NavBar onClick={this.onItemClick} activeKey={activeKey} />
   }
 }
 

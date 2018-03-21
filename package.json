@@ -97,7 +97,7 @@
     "precommit": "lint-staged",
     "prepush": "yarn test",
     "generate:types": "atsm -p src/**/*.scss",
-    "dev": "webpack-dev-server --port 8000",
+    "dev": "webpack-dev-server --port 8001",
     "compile": "webpack",
     "build:prod": "NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
     "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",

@@ -5,7 +5,7 @@ import styles from './NavBar.scss'
 
 const navItems = [
   {
-    name: 'Home',
+    name: 'Guohao',
     url: '/',
     eventKey: 1
   },
@@ -18,6 +18,11 @@ const navItems = [
     name: 'Contact',
     url: '/contacts',
     eventKey: 3
+  },
+  {
+    name: '404',
+    url: '/to-be-removed',
+    eventKey: 4
   }
 ]
 

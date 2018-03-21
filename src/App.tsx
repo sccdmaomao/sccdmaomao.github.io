@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { HomePage, NotFound } from 'routes'
+import { Contact, HomePage, NotFound, Projects } from 'routes'
 import { Grid, Rail, Segment, Sticky } from 'semantic-ui-react'
 import styles from './App.scss'
 import NavBar from './components/NavBar'
@@ -34,8 +34,8 @@ class App extends Component<{}, AppState> {
                   </Rail>
                   <Switch>
                     <Route path="/" exact component={HomePage} />
-                    <Route path="/projects" component={HomePage} />
-                    <Route path="/contact" component={HomePage} />
+                    <Route path="/projects" component={Projects} />
+                    <Route path="/contacts" component={Contact} />
                     <Route path="*" component={NotFound} />
                   </Switch>
                 </Segment>

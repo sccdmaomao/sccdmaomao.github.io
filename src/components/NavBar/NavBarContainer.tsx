@@ -9,7 +9,7 @@ class NavBarContainer extends Component<{}, NavBarState> {
   constructor(props) {
     super(props)
     this.state = {
-      activeKey: 1
+      activeKey: 0
     }
   }
 

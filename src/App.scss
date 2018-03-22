@@ -1,9 +1,11 @@
+.root {
+  background-color: #DFDCDC;
+  padding: 10px;
+  min-height: 100vh;
+}
+
 .rail {
   > div {
     width: 200px;
-  }
-  + div {
-    // Content height
-    min-height: calc(100vh - 42px);
   }
 }

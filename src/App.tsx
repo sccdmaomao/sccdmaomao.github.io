@@ -21,7 +21,7 @@ class App extends Component<{}, AppState> {
     const { contextRef } = this.state
     const offsetPx = 10
     return (
-      <div style={{ backgroundColor: '#DFDCDC', padding: `${offsetPx}px` }}>
+      <div className={styles.root}>
         <Router>
           <Grid centered columns={2}>
             <Grid.Column>

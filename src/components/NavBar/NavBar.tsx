@@ -3,49 +3,71 @@ import { NavLink } from 'react-router-dom'
 import { Segment } from 'semantic-ui-react'
 import styles from './NavBar.scss'
 
-const navItems = [
+interface NavItemObject {
+  name: string
+  url: url
+  eventKey: number
+}
+
+export type url = '/' | '/projects' | '/contacts' | '/to-be-removed'
+
+const navItems: NavItemObject[] = [
   {
     name: 'Guohao',
     url: '/',
-    eventKey: 1
+    eventKey: 0
   },
   {
     name: 'Projects',
     url: '/projects',
-    eventKey: 2
+    eventKey: 1
   },
   {
     name: 'Contact',
     url: '/contacts',
-    eventKey: 3
+    eventKey: 2
   },
   {
     name: '404',
     url: '/to-be-removed',
-    eventKey: 4
+    eventKey: 3
   }
 ]
 
-const isActive = e => {
+const isActive: (e) => boolean = e => {
   if (e) {
     return e.path === location.pathname || location.pathname === ''
   }
   return false
 }
 
-const NavBar = ({ onClick, activeKey }) => {
-  const renderNavItem = items =>
-    items.map(item => (
-      <NavLink
-        key={`navItem-${item.eventKey}`}
-        to={item.url}
-        className={styles.linkText}
-        activeClassName={styles.activeLink}
-        isActive={isActive}
-      >
-        {item.name}
-      </NavLink>
-    ))
+interface NavBarProps {
+  onClick: (e: Event, key: number) => void
+  activeKey: number
+}
+
+const NavBar = (props: NavBarProps) => {
+  const { onClick, activeKey } = props
+  const renderNavItem: (items: NavItemObject[]) => JSX.Element[] = items =>
+    items.map(item => {
+      const linkText =
+        item.eventKey === activeKey ? `< ${item.name} >` : item.name
+      return (
+        <NavLink
+          key={`navItem-${item.eventKey}`}
+          to={item.url}
+          className={styles.linkText}
+          activeClassName={styles.activeLink}
+          isActive={isActive}
+          onClick={
+            // tslint:disable:jsx-no-lambda
+            e => onClick(e, item.eventKey)
+          }
+        >
+          {linkText}
+        </NavLink>
+      )
+    })
 
   return (
     <Segment className={styles.navContainer}>

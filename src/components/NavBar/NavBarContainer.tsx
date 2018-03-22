@@ -19,7 +19,6 @@ class NavBarContainer extends Component<{}, NavBarState> {
   }
 
   private onItemClick = (e, key) => {
-    e.preventDefault()
     this.setState({
       activeKey: key
     })

@@ -10,16 +10,18 @@
   width: 300px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 500px;
 }
 
 .linkText {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 600;
   text-decoration: none;
   color: #5a6362;
   &:hover,
   &:focus {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none !important;
     color: #16a095 !important;
   }
@@ -27,7 +29,7 @@
 
 .activeLink {
   color: #16a095 !important;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .invisible {

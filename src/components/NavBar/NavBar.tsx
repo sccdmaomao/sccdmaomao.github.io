@@ -2,37 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Segment } from 'semantic-ui-react'
 import styles from './NavBar.scss'
-
-interface NavItemObject {
-  name: string
-  url: url
-  eventKey: number
-}
-
-export type url = '/' | '/projects' | '/contacts' | '/to-be-removed'
-
-const navItems: NavItemObject[] = [
-  {
-    name: 'Guohao',
-    url: '/',
-    eventKey: 0
-  },
-  {
-    name: 'Projects',
-    url: '/projects',
-    eventKey: 1
-  },
-  {
-    name: 'Contact',
-    url: '/contacts',
-    eventKey: 2
-  },
-  {
-    name: '404',
-    url: '/to-be-removed',
-    eventKey: 3
-  }
-]
+import { NavItemObject, navItems } from './NavBarContainer'
 
 const isActive: (e) => boolean = e => {
   if (e) {

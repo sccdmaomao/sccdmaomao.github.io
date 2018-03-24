@@ -27,6 +27,7 @@
     "lodash.isempty": "^4.4.0",
     "moment": "^2.20.1",
     "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
     "postcss-loader": "^2.0.9",
     "react": "^16.2.0",
     "react-apollo": "^2.0.1",
@@ -97,24 +98,26 @@
     "precommit": "lint-staged",
     "prepush": "yarn test",
     "generate:types": "atsm -p src/**/*.scss",
-    "dev": "yarn generate:types ; webpack-dev-server --port 8001",
+    "dev-server": "webpack-dev-server --port 8001",
+    "dev": "npm-run-all --serial generate:types dev-server",
     "compile": "webpack",
-    "build:prod": "NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
-    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
+    "build:prod":
+      "NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
+    "build:prod:quiet":
+      "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
     "test": "jest --verbose",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build:stats": "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
-    "optimize-svg": "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
-    "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
+    "build:stats":
+      "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
+    "optimize-svg":
+      "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
+    "reactify-svg":
+      "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
     "svg": "yarn optimize-svg && yarn reactify-svg",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
   "lint-staged": {
-    "*.{ts,tsx,css}": [
-      "yarn lint",
-      "prettier --write",
-      "git add"
-    ]
+    "*.{ts,tsx,css}": ["yarn lint", "prettier --write", "git add"]
   }
 }

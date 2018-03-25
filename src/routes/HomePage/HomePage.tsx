@@ -1,10 +1,10 @@
 import React from 'react'
 import SelfIntro from './components/SelfIntro'
-import styles from './HomePage.scss'
+// import styles from './HomePage.scss'
 
 const HomePage = () => {
   return (
-    <div className={styles.home}>
+    <div>
       <SelfIntro />
       <hr />
       time line

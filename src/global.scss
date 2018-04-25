@@ -1,0 +1,15 @@
+html {
+  background-color: #ced9e0;
+}
+
+/* Removes default margin from h3 */
+h3 {
+  margin: 0;
+}
+
+/* Remove the outline for buttons when focused */
+button {
+  &:focus {
+    outline: none;
+  }
+}

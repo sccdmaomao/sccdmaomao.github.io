@@ -49,7 +49,8 @@ module.exports = {
           'typings-for-css-modules-loader?localIdentName=[name]_[local]_[hash:base64:5]&modules&namedExport&camelCase',
           'sass-loader?sourceMap&sourceMapContents&outputStyle=expanded'
         ],
-        include: path.join(__dirname, 'src')
+        include: path.join(__dirname, 'src'),
+        exclude: path.join(__dirname, 'src/global.scss')
       },
       {
         // plain css loader for blueprint lib
@@ -66,6 +67,16 @@ module.exports = {
             'node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css'
           )
         ]
+      },
+      // special loader for scss overrides
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader',
+          'typings-for-css-modules-loader',
+          'sass-loader?sourceMap&sourceMapContents&outputStyle=expanded'
+        ],
+        include: path.join(__dirname, 'src/global.scss')
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,

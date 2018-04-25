@@ -1,3 +1,4 @@
+import Layout from 'components/Layout'
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 import { CookiesProvider } from 'react-cookie'
@@ -23,12 +24,14 @@ const AppContainer = () => {
         <CookiesProvider>
           <IntlProvider locale={locale} messages={translations} key={locale}>
             <Router>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/project" component={Project} />
-                <Route path="/contact" component={Contact} />
-                <Route component={NotFound} />
-              </Switch>
+              <Layout>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/project" component={Project} />
+                  <Route path="/contact" component={Contact} />
+                  <Route component={NotFound} />
+                </Switch>
+              </Layout>
             </Router>
           </IntlProvider>
         </CookiesProvider>

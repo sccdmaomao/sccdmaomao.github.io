@@ -1,5 +1,5 @@
 const path = require('path')
-
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -8,23 +8,28 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: ['babel-polyfill', './src/index.tsx'],
   output: {
     publicPath: '/',
     filename: 'bundle.js',
-    path: __dirname
+    path: __dirname + '/dist'
   },
   devtool: 'source-map',
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', 'css']
+    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', 'css', 'less']
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['babel-loader', 'ts-loader'],
+        use: [
+          { loader: 'babel-loader' },
+          {
+            loader: 'ts-loader'
+          }
+        ],
         include: path.resolve('src')
       },
       {
@@ -38,34 +43,7 @@ module.exports = {
         }
       },
       {
-        // Special loader for third party styles
-        test: /thirdParty.scss$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 2 }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('autoprefixer')({
-                  browsers: ['last 1 version', 'ie >= 11']
-                })
-              ]
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [path.resolve(__dirname, '..', 'node_modules')]
-            }
-          }
-        ]
-      },
-      {
-        test: /\.s?css$/,
+        test: /\.scss$/,
         loaders: [
           'style-loader',
           'typings-for-css-modules-loader?localIdentName=[name]_[local]_[hash:base64:5]&modules&namedExport&camelCase',
@@ -74,9 +52,20 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       {
-        // required config for react-flexbox-grid
+        // plain css loader for blueprint lib
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader',
+        include: [
+          path.join(__dirname, 'node_modules/@blueprintjs/core/lib/css'),
+          path.join(
+            __dirname,
+            'node_modules/@blueprintjs/datetime/lib/css/blueprint-datetime.css'
+          ),
+          path.join(
+            __dirname,
+            'node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css'
+          )
+        ]
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
@@ -88,7 +77,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig],
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
+  ],
   devServer: {
     historyApiFallback: true,
     proxy: {

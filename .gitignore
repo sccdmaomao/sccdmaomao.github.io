@@ -12,6 +12,6 @@ dist
 .env
 
 *.d.ts
-package-lock.json
+
 stats
 storybook-static

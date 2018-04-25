@@ -106,7 +106,7 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@blueprintjs/core@^2.2.1":
+"@blueprintjs/core@^2.1.1", "@blueprintjs/core@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-2.2.1.tgz#5dd8ef22b2a4bd6f180ef587bc8bebee20ec137f"
   dependencies:
@@ -117,6 +117,15 @@
     normalize.css "^8.0.0"
     popper.js "^1.14.1"
     react-popper "^0.8.2"
+    tslib "^1.9.0"
+
+"@blueprintjs/datetime@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/datetime/-/datetime-2.0.2.tgz#26329a5ab2d96e6151a832948df9cfbf17c357b5"
+  dependencies:
+    "@blueprintjs/core" "^2.1.1"
+    classnames "^2.2"
+    react-day-picker "^7.0.7"
     tslib "^1.9.0"
 
 "@blueprintjs/icons@^2.1.1":
@@ -8432,6 +8441,12 @@ react-cookie@^2.1.2:
     hoist-non-react-statics "^2.3.1"
     prop-types "^15.0.0"
     universal-cookie "^2.1.2"
+
+react-day-picker@^7.0.7:
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/react-day-picker/-/react-day-picker-7.1.6.tgz#b7e99c2c4a66192f6a0b205accaad9e61c80c9ef"
+  dependencies:
+    prop-types "^15.6.1"
 
 react-dev-utils@^5.0.0:
   version "5.0.1"

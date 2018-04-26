@@ -6,8 +6,10 @@ import {
   NavbarGroup,
   NavbarHeading
 } from '@blueprintjs/core'
+import classnames from 'classnames'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import styles from './Nav.scss'
 
 const links = [
   { text: 'Home', to: '' },
@@ -18,7 +20,7 @@ const links = [
 
 const Nav = () => {
   return (
-    <Navbar>
+    <Navbar className={classnames('pt-dark', styles.navbar)}>
       <NavbarGroup align={Alignment.LEFT}>
         <NavbarHeading>Guohao Yan</NavbarHeading>
         <NavbarDivider />

@@ -106,7 +106,7 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@blueprintjs/core@^2.1.1", "@blueprintjs/core@^2.2.1":
+"@blueprintjs/core@^2.0.0", "@blueprintjs/core@^2.1.1", "@blueprintjs/core@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-2.2.1.tgz#5dd8ef22b2a4bd6f180ef587bc8bebee20ec137f"
   dependencies:
@@ -132,6 +132,14 @@
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-2.1.1.tgz#426b0291baf198e0181ae8f49bb5c2bc0bb55e9f"
   dependencies:
+    classnames "^2.2"
+    tslib "^1.9.0"
+
+"@blueprintjs/select@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/select/-/select-2.0.0.tgz#35c1e05e1171774fe4cb6772f5f8f77d5be80c4d"
+  dependencies:
+    "@blueprintjs/core" "^2.0.0"
     classnames "^2.2"
     tslib "^1.9.0"
 

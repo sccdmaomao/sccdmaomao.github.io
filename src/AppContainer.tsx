@@ -11,12 +11,9 @@ const locale = 'en'
 /* tslint:disable */
 const translations = require(`./i18n/${locale}.json`)
 const i18n = require(`react-intl/locale-data/${locale}`)
-/* tslint:enable */
 addLocaleData(i18n)
-import '@blueprintjs/core/lib/css/blueprint.css'
-import '@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-import '@blueprintjs/icons/lib/css/blueprint-icons.css'
-import 'global.scss'
+import 'thirdParty.scss'
+/* tslint:enable */
 
 const AppContainer = () => {
   return (

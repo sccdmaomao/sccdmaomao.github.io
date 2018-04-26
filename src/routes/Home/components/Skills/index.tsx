@@ -4,7 +4,9 @@ import SkillCategorySelector, {
   SkillCategory,
   skillCategoryOptions
 } from 'components/SkillCategorySelector'
+import SkillCategoryTags from 'components/SkillCategoryTags'
 import React, { Component } from 'react'
+import capitalize from 'utils/capitalize'
 
 interface CategorySelectState {
   category: string
@@ -15,20 +17,21 @@ class Skills extends Component<{}, CategorySelectState> {
     super(props)
 
     this.state = {
-      category: skillCategoryOptions[0].text
+      category: skillCategoryOptions[0].text.toLowerCase()
     }
   }
 
   public render() {
+    const { category } = this.state
     return (
       <div>
         <SkillCategorySelector
           itemRenderer={this.itemRenderer}
           handleItemSelect={this.handleItemSelect}
-          targetText={this.state.category}
+          targetText={capitalize(category)}
         />
         <hr />
-        <div>tags</div>
+        <SkillCategoryTags category={category} />
       </div>
     )
   }
@@ -46,7 +49,7 @@ class Skills extends Component<{}, CategorySelectState> {
 
   private handleItemSelect = (item: SkillCategory) => {
     this.setState({
-      category: item.text
+      category: item.text.toLowerCase()
     })
   }
 }

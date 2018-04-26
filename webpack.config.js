@@ -50,33 +50,15 @@ module.exports = {
           'sass-loader?sourceMap&sourceMapContents&outputStyle=expanded'
         ],
         include: path.join(__dirname, 'src'),
-        exclude: path.join(__dirname, 'src/global.scss')
+        exclude: [path.join(__dirname, 'src/thirdParty.scss')]
       },
       {
-        // plain css loader for blueprint lib
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-        include: [
-          path.join(__dirname, 'node_modules/@blueprintjs/core/lib/css'),
-          path.join(
-            __dirname,
-            'node_modules/@blueprintjs/datetime/lib/css/blueprint-datetime.css'
-          ),
-          path.join(
-            __dirname,
-            'node_modules/@blueprintjs/icons/lib/css/blueprint-icons.css'
-          )
-        ]
-      },
-      // special loader for scss overrides
-      {
-        test: /\.scss$/,
+        test: /thirdParty.scss$/,
         loaders: [
           'style-loader',
           'typings-for-css-modules-loader',
           'sass-loader?sourceMap&sourceMapContents&outputStyle=expanded'
-        ],
-        include: path.join(__dirname, 'src/global.scss')
+        ]
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,

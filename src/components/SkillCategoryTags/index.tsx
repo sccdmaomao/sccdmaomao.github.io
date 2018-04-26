@@ -17,7 +17,7 @@ const SkillCategoryTags = (props: SkillCategoryTagsProps) => {
   return (
     <div className={styles.tagsContainer}>
       {displaySkills.map((skill, index) => (
-        <Tag key={`skill-tag-${index}`} interactive>
+        <Tag key={`skill-tag-${index}`} interactive large>
           {skill}
         </Tag>
       ))}

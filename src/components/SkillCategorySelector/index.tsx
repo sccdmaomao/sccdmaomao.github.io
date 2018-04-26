@@ -2,18 +2,20 @@ import { Button } from '@blueprintjs/core'
 import { ItemPredicate, Select } from '@blueprintjs/select'
 import classnames from 'classnames'
 import React from 'react'
+import skills from 'texts/Skills'
+import capitalize from 'utils/capitalize'
 
 export interface SkillCategory {
   text: string
 }
 
-export const skillCategoryOptions: SkillCategory[] = [
-  { text: 'All' },
-  { text: 'Frontend' },
-  { text: 'Backend' },
-  { text: 'Tools' }
-]
-
+export const skillCategoryOptions: SkillCategory[] = [{ text: 'All' }].concat(
+  Object.keys(skills).map(category => {
+    return {
+      text: capitalize(category)
+    }
+  })
+)
 const SkillCategorySelect = Select.ofType<SkillCategory>()
 
 const filterRule: ItemPredicate<SkillCategory> = (query, category) => {

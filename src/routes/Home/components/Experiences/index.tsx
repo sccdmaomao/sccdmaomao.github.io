@@ -1,7 +1,7 @@
 import { Text } from '@blueprintjs/core'
 import React from 'react'
+import styles from 'routes/Home/Home.scss'
 import timelines from 'texts/Experiences'
-import styles from '../Home.scss'
 
 const Experiences = () => {
   return (

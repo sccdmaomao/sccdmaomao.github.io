@@ -1,6 +1,6 @@
-import { Text } from '@blueprintjs/core'
 import CollapsibleCard from 'components/CollapsibleCard'
 import React from 'react'
+import Biography from './components/Biography'
 import Experiences from './components/Experiences'
 import Skills from './components/Skills'
 
@@ -12,7 +12,7 @@ interface Card {
 }
 
 const cards: Card[] = [
-  { title: 'Biography', width: 1000, children: <Text>Bio..</Text> },
+  { title: 'Biography', width: 1000, children: <Biography /> },
   {
     title: 'Skills',
     width: 1000,
@@ -21,7 +21,6 @@ const cards: Card[] = [
   {
     title: 'Experiences',
     width: 1000,
-    defaultClose: true,
     children: <Experiences />
   }
 ]

@@ -39,6 +39,7 @@ class Skills extends Component<{}, CategorySelectState> {
   private itemRenderer = (item, { handleClick }) => {
     return (
       <MenuItem
+        active={this.state.category === item.text.toLowerCase()}
         style={{ width: '280px' }}
         key={`select-menu-${item.text}`}
         onClick={handleClick}

@@ -1,13 +1,19 @@
 import { Text } from '@blueprintjs/core'
-import TextWithLink from 'components/TextWithLinks'
+import TextWrapper from 'components/TextWrapper'
 import React from 'react'
-import { footerText, footerTextReplaces, intro } from 'texts/Biography'
+import { bodyText, footerComponents, footerText, intro } from 'texts/Biography'
 
 const Biography = () => {
   return (
     <div>
       <Text>{intro}</Text>
-      <TextWithLink text={footerText} replaces={footerTextReplaces} />
+      <br />
+      <Text>{bodyText}</Text>
+      <br />
+      <TextWrapper
+        textSegments={footerText}
+        componentSegments={footerComponents}
+      />
     </div>
   )
 }

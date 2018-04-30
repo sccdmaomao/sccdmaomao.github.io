@@ -1,6 +1,22 @@
 import React from 'react'
-const HomePage = () => {
+
+/*
+
+Todo:
+
+simple page to display follow contact details
+
+(Social networks)
+  Linkedin
+  Stackoverflow
+  github
+
+(Regular contacts)
+  email
+  
+*/
+const Contact = () => {
   return <h1>contact</h1>
 }
 
-export default HomePage
+export default Contact

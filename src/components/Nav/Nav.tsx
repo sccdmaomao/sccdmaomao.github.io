@@ -11,7 +11,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './Nav.scss'
 
-const links = [
+export const links = [
   { text: 'Home', to: '' },
   { text: 'Project', to: 'project' },
   { text: 'Contact', to: 'contact' },

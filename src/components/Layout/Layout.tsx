@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-    <div>
+    <div style={{ padding: '0 30%' }}>
       <Nav />
       {props.children}
     </div>

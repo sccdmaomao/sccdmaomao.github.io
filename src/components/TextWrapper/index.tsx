@@ -10,7 +10,7 @@ const TextWrapper = (props: TextWrapperProps) => {
   const wrapper = []
 
   textSegments.forEach((text, index) => {
-    wrapper.push(<span>{text}</span>)
+    wrapper.push(<span key={`bio-${index}`}>{text}</span>)
     if (componentSegments[index]) {
       wrapper.push(componentSegments[index])
     }

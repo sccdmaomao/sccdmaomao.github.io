@@ -14,7 +14,7 @@ const footerText = [` Checkout some of those in the `, ` tab!`]
 // tslint:disable:jsx-wrap-multiline
 const footerComponents = [
   <NavLink to={'project'} key={`footer-1`}>
-    <a style={{ fontWeight: 'bold' }}>Projects</a>
+    <span style={{ fontWeight: 'bold' }}>Projects</span>
   </NavLink>
 ]
 export { intro, bodyText, footerText, footerComponents }

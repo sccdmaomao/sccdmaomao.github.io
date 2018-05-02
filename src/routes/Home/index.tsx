@@ -1,26 +1,21 @@
-import CollapsibleCard from 'components/CollapsibleCard'
+import CollapsibleCard, {
+  CollapsibleCardProps
+} from 'components/CollapsibleCard'
 import React from 'react'
 import Biography from './components/Biography'
 import Experiences from './components/Experiences'
 import Skills from './components/Skills'
 
-interface Card {
-  title: string
-  children: JSX.Element
-  defaultClose?: boolean
-  width?: number
-}
-
-const cards: Card[] = [
-  { title: 'Biography', width: 1000, children: <Biography /> },
+const cards: CollapsibleCardProps[] = [
+  { title: 'Biography', minWidth: 700, children: <Biography /> },
   {
     title: 'Skills',
-    width: 1000,
+    minWidth: 700,
     children: <Skills />
   },
   {
     title: 'Experiences',
-    width: 1000,
+    minWidth: 700,
     children: <Experiences />
   }
 ]

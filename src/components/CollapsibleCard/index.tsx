@@ -3,12 +3,13 @@ import classnames from 'classnames'
 import React, { Component } from 'react'
 import styles from 'routes/Home/Home.scss'
 
-interface CollapsibleCardProps {
+export interface CollapsibleCardProps {
   title: string
   children: JSX.Element
   defaultClose?: boolean
   className?: string
   width?: number
+  minWidth?: number
 }
 
 interface CollapsibleCardState {
@@ -28,7 +29,7 @@ class CollapsibleCard extends Component<
 
   public render() {
     const { isOpen } = this.state
-    const { title, width, children } = this.props
+    const { title, minWidth, width, children } = this.props
     return (
       <div className={classnames(styles.card, this.props.className)}>
         <Button
@@ -40,7 +41,7 @@ class CollapsibleCard extends Component<
           <h3>{title}</h3>
         </Button>
         <Collapse isOpen={isOpen}>
-          <Card elevation={Elevation.TWO} style={{ width }}>
+          <Card elevation={Elevation.TWO} style={{ width, minWidth }}>
             {children}
           </Card>
         </Collapse>

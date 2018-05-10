@@ -1,6 +1,9 @@
 import { Button, Card } from '@blueprintjs/core'
 import React, { Component } from 'react'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Fade from 'react-reveal/Fade'
+import styles from './Contact.scss'
+
 interface SocialNetWork {
   siteName: string
   url: string
@@ -37,7 +40,7 @@ class Contact extends Component<{}, ContactState> {
 
   public render() {
     return (
-      <div>
+      <div style={{ minWidth: '600px' }}>
         {socialNetworks.map((contact, index) => (
           <Card
             key={`contact-cards-${index}`}
@@ -48,21 +51,30 @@ class Contact extends Component<{}, ContactState> {
             <div>{contact.siteName}</div>
           </Card>
         ))}
-        <div>
+        <Card className={styles.showEmail}>
           <Fade bottom when={this.state.showEmail}>
-            React Reveal
+            <CopyToClipboard
+              text={'sccdmaomao@hotmail.com'}
+              onCopy={this.state.showEmail && this.handleEmailClick}
+            >
+              <span className={styles.email}>sccdmaomao@hotmail.com</span>
+            </CopyToClipboard>
           </Fade>
           <Button onClick={this.toggleEmail}>
             {this.state.showEmail ? 'Hide' : 'Show'} Email
           </Button>
-        </div>
+        </Card>
       </div>
     )
+  }
+  private handleEmailClick() {
+    alert('copied')
   }
 
   private handleLinkClick(url) {
     window.open(url, '_blank')
   }
+
   private toggleEmail() {
     this.setState({ showEmail: !this.state.showEmail })
   }

@@ -1,0 +1,13 @@
+.showEmail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email {
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

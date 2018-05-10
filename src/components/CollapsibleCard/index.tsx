@@ -1,7 +1,5 @@
 import { Button, Card, Collapse, Elevation } from '@blueprintjs/core'
-import classnames from 'classnames'
 import React, { Component } from 'react'
-import styles from 'routes/Home/Home.scss'
 
 export interface CollapsibleCardProps {
   title: string
@@ -31,7 +29,7 @@ class CollapsibleCard extends Component<
     const { isOpen } = this.state
     const { title, minWidth, width, children } = this.props
     return (
-      <div className={classnames(styles.card, this.props.className)}>
+      <div className={this.props.className}>
         <Button
           minimal
           icon={isOpen ? 'folder-open' : 'folder-close'}

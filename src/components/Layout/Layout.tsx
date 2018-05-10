@@ -1,5 +1,6 @@
 import Nav from 'components/Nav'
 import React from 'react'
+import styles from './Layout.scss'
 
 interface LayoutProps {
   children: JSX.Element
@@ -7,7 +8,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-    <div style={{ padding: '0 30%' }}>
+    <div className={styles.root}>
       <Nav />
       {props.children}
     </div>

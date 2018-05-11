@@ -1,4 +1,4 @@
-import { Button, Card } from '@blueprintjs/core'
+import { Button, Card, Intent, Position, Toaster } from '@blueprintjs/core'
 import React, { Component } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Fade from 'react-reveal/Fade'
@@ -36,6 +36,7 @@ class Contact extends Component<{}, ContactState> {
     }
 
     this.toggleEmail = this.toggleEmail.bind(this)
+    this.handleEmailClick = this.handleEmailClick.bind(this)
   }
 
   public render() {
@@ -68,7 +69,15 @@ class Contact extends Component<{}, ContactState> {
     )
   }
   private handleEmailClick() {
-    alert('copied')
+    const appToaster = Toaster.create({
+      position: Position.TOP
+    })
+    appToaster.show({
+      message: 'Copied to clipboard.',
+      intent: Intent.SUCCESS,
+      icon: 'saved',
+      timeout: 2000
+    })
   }
 
   private handleLinkClick(url) {

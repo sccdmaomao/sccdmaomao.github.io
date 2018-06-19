@@ -53,6 +53,7 @@ class Contact extends Component<{}, ContactState> {
           </Card>
         ))}
         <Card className={styles.showEmail}>
+          {!this.state.showEmail && <span>Email</span>}
           <Fade bottom when={this.state.showEmail}>
             <CopyToClipboard
               text={'sccdmaomao@hotmail.com'}

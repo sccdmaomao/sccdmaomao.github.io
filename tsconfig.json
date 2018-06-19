@@ -8,7 +8,9 @@
     "outDir": "ts-build",
     "jsx": "preserve",
     "moduleResolution": "node",
-    "lib": ["es6", "es7", "dom"]
+    "lib": ["es6", "es7", "dom"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "exclude": ["node_modules"]
 }

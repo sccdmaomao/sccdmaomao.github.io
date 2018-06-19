@@ -1,0 +1,36 @@
+html,
+body {
+  background-image: url("/resources/images/background2.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.empty-space {
+  height: 30%;
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
+.address {
+  font-size: 18px;
+}
+
+.preview {
+  height: 800px;
+  margin-top: 20%;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1, h2, h3 {
+  font-family: 'Corben', Georgia, Times, serif;
+}

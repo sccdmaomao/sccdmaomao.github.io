@@ -1,0 +1,33 @@
+.redirect {
+    display: block;
+}
+.title {
+    font-family: Tahoma;
+}
+.link-frame {}
+.link-frame ul {
+    list-style-type: none;
+    display: inline;
+}
+.link-frame li {
+    padding-top: 40px;
+    margin-right: 50px;
+    list-style-type: none;
+    ;
+    display: inline-table;
+    ;
+}
+.link-frame .title {
+    background-color: rgba(92, 103, 139, .9);
+}
+.link-frame .image-container {
+    width: 250px;
+    height: 150px;
+    border-style: ridge;
+    display: block;
+}
+.link-frame .image-container img {
+    margin: -10px 0px 20px 0px;
+    max-width: 100%;
+    max-height: 100%;
+}

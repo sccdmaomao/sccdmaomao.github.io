@@ -9,6 +9,32 @@
   "engines": {
     "node": ">=9.2.0"
   },
+  "scripts": {
+    "dev-server": "webpack-dev-server --port 8001 --host 0.0.0.0 --mode development",
+    "dev": "npm-run-all --serial generate:types dev-server",
+    "compile": "webpack",
+    "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
+    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build:stats": "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
+    "optimize-svg": "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
+    "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
+    "svg": "yarn optimize-svg && yarn reactify-svg",
+    "lint": "tslint --project tsconfig.json --config tslint.json"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,css}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@blueprintjs/core": "^3.6.1",
     "@blueprintjs/datetime": "^3.1.0",
@@ -62,7 +88,7 @@
     "electrode-bundle-analyzer": "^1.0.0",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^0.14.3",
+    "husky": "^3.0.1",
     "identity-obj-proxy": "^3.0.0",
     "less-loader": "^4.0.5",
     "lint-staged": "^7.0.2",
@@ -87,28 +113,5 @@
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "^3.1.1",
     "yarn": "^1.3.2"
-  },
-  "scripts": {
-    "precommit": "lint-staged",
-    "generate:types": "atsm -p src/**/*.scss",
-    "dev-server": "webpack-dev-server --port 8001 --host 0.0.0.0 --mode development",
-    "dev": "npm-run-all --serial generate:types dev-server",
-    "compile": "webpack",
-    "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
-    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build:stats": "mkdir -p ./stats ; ./node_modules/.bin/webpack --config webpack.config.stats.js --json > stats/stats.json ; ./node_modules/.bin/analyze-bundle --bundle stats/bundle.js --stats stats/stats.json --dir ./stats",
-    "optimize-svg": "find ./src/components/Icons -name \"*.svg\" -exec svgo {} \\;",
-    "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
-    "svg": "yarn optimize-svg && yarn reactify-svg",
-    "lint": "tslint --project tsconfig.json --config tslint.json"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,css}": [
-      "yarn lint",
-      "prettier --write",
-      "git add"
-    ]
   }
 }

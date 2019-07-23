@@ -56,5 +56,16 @@ module.exports = {
   plugins: [
     HtmlWebpackPluginConfig,
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true,
+    disableHostCheck: true,
+    proxy: {
+      '/api': {
+        target: process.env.BFF_BASE,
+        pathRewrite: { '^/api': '/' }
+      }
+    },
+    inline: true
+  }
 }

@@ -1,3 +1,12 @@
 {
-  "presets": ["es2015", "react"]
+  "env": {
+    "production": {
+      "plugins": ["emotion"],
+      "presets": ["es2015", "react"]
+    },
+    "development": {
+      "plugins": [["emotion", { "sourceMap": true }]],
+      "presets": ["es2015", "react"]
+    }
+  }
 }

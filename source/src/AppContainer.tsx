@@ -11,7 +11,6 @@ const locale = 'en'
 const translations = require(`./i18n/${locale}.json`)
 const i18n = require(`react-intl/locale-data/${locale}`)
 addLocaleData(i18n)
-import 'thirdParty.scss'
 /* tslint:enable */
 
 const AppContainer = () => {

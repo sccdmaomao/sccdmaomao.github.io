@@ -1,8 +1,7 @@
-import { Tag } from '@blueprintjs/core'
 import { SkillCategory } from 'components/SkillCategorySelector'
 import React from 'react'
 import skills from 'texts/Skills'
-import styles from './Tags.scss'
+import { StyledTag } from './TagsStyles'
 
 interface SkillCategoryTagsProps {
   category: string
@@ -19,11 +18,10 @@ const SkillCategoryTags = (props: SkillCategoryTagsProps) => {
   return (
     <div>
       {displaySkills.sort().map((skill, index) => (
-        <Tag
+        <StyledTag
           key={`skill-tag-${index}`}
           interactive
           large
-          className={styles.tag}
           onClick={(e: any) => {
             const text = e.target.textContent
             Object.keys(skills).forEach(skillCategory => {
@@ -34,7 +32,7 @@ const SkillCategoryTags = (props: SkillCategoryTagsProps) => {
           }}
         >
           {skill}
-        </Tag>
+        </StyledTag>
       ))}
     </div>
   )

@@ -2,19 +2,19 @@ import { H3 } from '@blueprintjs/core'
 import ProjectShowcase from 'components/ProjectShowcase'
 import React from 'react'
 import projects from 'texts/Projects'
-import routeStyles from '../Route.scss'
-import styles from './Project.scss'
+import { RouteWrapper } from '../RouteStyles'
+import { PreviewWrapper } from './ProjectStyles'
 
 const Project = () => {
   return (
-    <div className={routeStyles.container}>
+    <RouteWrapper>
       <H3>Projects</H3>
-      <div className={styles.previewContainer}>
+      <PreviewWrapper>
         {projects.map((project, i) => (
           <ProjectShowcase {...project} key={`project-${i}`} />
         ))}
-      </div>
-    </div>
+      </PreviewWrapper>
+    </RouteWrapper>
   )
 }
 

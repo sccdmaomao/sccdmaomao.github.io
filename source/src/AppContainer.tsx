@@ -1,3 +1,4 @@
+import '@blueprintjs/core/lib/css/blueprint.css'
 import Layout from 'components/Layout'
 import React from 'react'
 import { CookiesProvider } from 'react-cookie'

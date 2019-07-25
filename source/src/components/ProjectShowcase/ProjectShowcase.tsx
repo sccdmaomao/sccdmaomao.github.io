@@ -1,6 +1,6 @@
-import { Card, H3, MenuDivider, Tag } from '@blueprintjs/core'
+import { Card, H3, MenuDivider } from '@blueprintjs/core'
 import React from 'react'
-import styles from './ProjectShowcase.scss'
+import { PreviewImage, StyledTag, TagsWrapper } from './ProjectShowcaseStyles'
 
 interface ProjectShowcaseProps {
   title: string
@@ -21,19 +21,15 @@ const ProjectShowcase: React.SFC<ProjectShowcaseProps> = ({
     <Card>
       <H3>{title}</H3>
       <p>{desc}</p>
-      <img
-        src={preview}
-        className={styles.preview}
-        onClick={() => window.open(url, '_blank')}
-      />
+      <PreviewImage src={preview} onClick={() => window.open(url, '_blank')} />
       <MenuDivider />
-      <div className={styles.tags}>
+      <TagsWrapper>
         {tags.map((tag, i) => (
-          <Tag key={`tag-${title}-${i}`} round className={styles.tag}>
+          <StyledTag key={`tag-${title}-${i}`} round>
             {tag}
-          </Tag>
+          </StyledTag>
         ))}
-      </div>
+      </TagsWrapper>
     </Card>
   )
 }

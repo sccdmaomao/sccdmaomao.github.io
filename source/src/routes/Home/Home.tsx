@@ -1,12 +1,10 @@
-import CollapsibleCard, {
-  CollapsibleCardProps
-} from 'components/CollapsibleCard'
+import { CollapsibleCardProps } from 'components/CollapsibleCard'
 import React from 'react'
-import styles from '../Route.scss'
+import { RouteWrapper } from '../RouteStyles'
 import Biography from './components/Biography'
 import Experiences from './components/Experiences'
 import Skills from './components/Skills'
-import ownStyles from './Home.scss'
+import { StyledCard } from './HomeStyles'
 
 const cards: CollapsibleCardProps[] = [
   { title: 'Biography', minWidth: 700, children: <Biography /> },
@@ -23,20 +21,16 @@ const cards: CollapsibleCardProps[] = [
 ]
 
 const HomePage = () => (
-  <div className={styles.container}>
+  <RouteWrapper>
     {cards.map(card => {
       const { children, ...rest } = card
       return (
-        <CollapsibleCard
-          key={`home-card-${card.title}`}
-          {...rest}
-          className={ownStyles.card}
-        >
+        <StyledCard key={`home-card-${card.title}`} {...rest}>
           {children}
-        </CollapsibleCard>
+        </StyledCard>
       )
     })}
-  </div>
+  </RouteWrapper>
 )
 
 export default HomePage

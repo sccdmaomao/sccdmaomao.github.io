@@ -1,6 +1,6 @@
 import Nav from 'components/Nav'
 import React from 'react'
-import styles from './Layout.scss'
+import { LayoutWrapper } from './LayoutStyles'
 
 interface LayoutProps {
   children: JSX.Element
@@ -8,10 +8,10 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-    <div className={styles.root}>
+    <LayoutWrapper>
       <Nav />
       {props.children}
-    </div>
+    </LayoutWrapper>
   )
 }
 

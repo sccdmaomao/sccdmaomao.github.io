@@ -15,10 +15,10 @@ module.exports = {
     filename: 'bundle.js',
     path: __dirname + '/dist'
   },
-  devtool: 'source-map',
+  devtool: isDev? 'source-map' : '',
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.json', '.scss', 'css', 'less']
+    extensions: ['.ts', '.tsx', '.js', '.json', 'css']
   },
   mode: isDev? 'development': 'production',
   module: {
@@ -44,6 +44,10 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
         use: 'file-loader?name=[name].[ext]'
       },
@@ -56,16 +60,5 @@ module.exports = {
   plugins: [
     HtmlWebpackPluginConfig,
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
-  ],
-  devServer: {
-    historyApiFallback: true,
-    disableHostCheck: true,
-    proxy: {
-      '/api': {
-        target: process.env.BFF_BASE,
-        pathRewrite: { '^/api': '/' }
-      }
-    },
-    inline: true
-  }
+  ]
 }

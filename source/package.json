@@ -21,7 +21,7 @@
     "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
     "svg": "yarn optimize-svg && yarn reactify-svg",
     "lint": "tslint --project tsconfig.json --config tslint.json",
-    "deploy": "yarn build:prod && mv ./dist/* ../ "
+    "deploy": "yarn build:prod && mv ./dist/* ../ && echo '=======\nBuild complete, ready for push\n======='"
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
@@ -68,7 +68,7 @@
     "react-stickynode": "^2.0.1",
     "react-transition-group": "^2.3.1",
     "redux": "^4.0.4",
-    "redux-devtools-extension": "^2.13.8",
+    "&redux-devtools-extension": "^2.13.8",
     "redux-form": "^8.2.4",
     "redux-typed-modules": "^2.2.1",
     "webpack-stats-plugin": "^0.2.1"

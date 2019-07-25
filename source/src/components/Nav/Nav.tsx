@@ -20,7 +20,7 @@ export const links: Array<{ text: string; to: string; icon?: IconName }> = [
 ]
 
 const Nav = () => {
-  const pathname = location.pathname.slice(1)
+  const pathname = location.hash.slice(2)
   let selectedTabId
   links.forEach((link, i) => {
     if (link.to === pathname) {

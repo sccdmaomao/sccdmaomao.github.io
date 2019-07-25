@@ -9,7 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 const isDev = process.env.NODE_ENV !== 'production'
 module.exports = {
-  entry: ['babel-polyfill', './src/index.tsx'],
+  entry: ['@babel/polyfill', './src/index.tsx'],
   output: {
     publicPath: '/',
     filename: 'bundle.js',

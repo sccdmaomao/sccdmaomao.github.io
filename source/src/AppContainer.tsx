@@ -1,12 +1,12 @@
 import '@blueprintjs/core/lib/css/blueprint.css'
 import Layout from 'components/Layout'
+import { ConnectedRouter } from 'connected-react-router'
 import React from 'react'
-import { CookiesProvider } from 'react-cookie'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Routes from 'routes'
-import { store } from './store/initApp'
+import { history, store } from './store/initApp'
+
 const locale = 'en'
 /* tslint:disable */
 const translations = require(`./i18n/${locale}.json`)
@@ -17,17 +17,13 @@ addLocaleData(i18n)
 const AppContainer = () => {
   return (
     <Provider store={store}>
-      <CookiesProvider>
-        <IntlProvider locale={locale} messages={translations} key={locale}>
-          <Router>
-            <Layout>
-              <Switch>
-                <Routes />
-              </Switch>
-            </Layout>
-          </Router>
-        </IntlProvider>
-      </CookiesProvider>
+      <IntlProvider locale={locale} messages={translations} key={locale}>
+        <ConnectedRouter history={history}>
+          <Layout>
+            <Routes />
+          </Layout>
+        </ConnectedRouter>
+      </IntlProvider>
     </Provider>
   )
 }

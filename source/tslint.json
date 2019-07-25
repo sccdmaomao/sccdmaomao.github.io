@@ -21,7 +21,6 @@
     "object-literal-sort-keys": false,
     "jsx-no-multiline-js": false,
     "one-variable-per-declaration": false,
-    "no-unused-variable": true,
     "jsx-curly-spacing": false,
     "jsx-no-lambda": false
   },

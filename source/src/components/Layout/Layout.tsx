@@ -2,11 +2,7 @@ import Nav from 'components/Nav'
 import React from 'react'
 import { LayoutWrapper } from './LayoutStyles'
 
-interface LayoutProps {
-  children: JSX.Element
-}
-
-const Layout = (props: LayoutProps) => {
+const Layout: React.SFC<{}> = props => {
   return (
     <LayoutWrapper>
       <Nav />

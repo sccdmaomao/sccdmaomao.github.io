@@ -49,7 +49,14 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
-        use: 'file-loader?name=[name].[ext]&emitFile=false'
+        use: [
+          {
+            loader:'file-loader',
+            options: {
+              outputPath: 'assets',
+            }
+          }
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

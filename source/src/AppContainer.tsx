@@ -5,6 +5,7 @@ import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
 import Routes from 'routes'
+import './global.css'
 import { history, store } from './store/initApp'
 
 const locale = 'en'

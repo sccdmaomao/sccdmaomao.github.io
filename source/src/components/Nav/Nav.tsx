@@ -14,7 +14,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export const links: Array<{ text: string; to: string; icon?: IconName }> = [
-  { text: 'Home', to: '', icon: 'home' },
+  { text: 'About Me', to: '', icon: 'home' },
   { text: 'Projects', to: 'project', icon: 'applications' },
   { text: 'Contact', to: 'contact', icon: 'new-person' }
 ]

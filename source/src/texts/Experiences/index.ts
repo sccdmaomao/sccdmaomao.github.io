@@ -10,28 +10,32 @@ interface Experience {
 const timelines: Experience[] = [
   {
     title: 'Software Engineer',
-    company: '@StealthStartUp',
+    company: '@Airline Start-up in stealth mode',
     dateRange: [moment('2017-11'), moment()],
-    desc: `Full-time Frontend developer, led a couple of enterprise projects from scratch.
-       Also act as part of platform team to enhance developer experiences when building new projects.`
+    desc: `
+  - Frontend team lead to initiate multiple projects from scratch to production,
+  - Oversees project difficulties and build tools to enhance the development
+experiences across all teams, 
+  - Products focus on providing flight scheduling solutions for airline and customer
+relationships`
   },
   {
     title: 'Software Engineer',
     company: '@Informatica',
     dateRange: [moment('2017-04'), moment('2017-11')],
-    desc: `Returned as full-time frontend developer, 
-        dedicated to design and implement highly customizable, 
-        configurable, interactive UI with React stacks.
-        Won the internal innovation award for projects participated`
+    desc: `
+  - Full time frontend developer
+  - Innovated & produced new interactive, responsive, highly customizable UI for all
+  MDM products with React stacks.`
   },
   {
     title: 'Internship',
     company: '@Informatica',
     dateRange: [moment('2015-08'), moment('2016-09')],
-    desc: `PEY - Internship program, worked as part of agile team
-       on backend side of Master Data Management(MDM) Products. 
-      Performing debugging, integration, feature implementation tasks with agile development practices.
-        `
+    desc: `
+  - Year-long professional experience program
+  - Master data management production bug fix and integrations
+  - Participated in release team to work through the MDM v10.2 release.`
   }
 ]
 

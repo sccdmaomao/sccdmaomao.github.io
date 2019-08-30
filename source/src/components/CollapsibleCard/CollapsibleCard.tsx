@@ -30,15 +30,18 @@ class CollapsibleCard extends Component<
     const { title, minWidth, width, children } = this.props
     return (
       <div className={this.props.className}>
-        <Icon icon={isOpen ? 'maximize' : 'minimize'} iconSize={20} />
         <Button
           minimal
-          style={{ marginBottom: '10px' }}
+          icon={<Icon icon={isOpen ? 'minimize' : 'maximize'} iconSize={20} />}
+          style={{ margin: '10px 0' }}
           onClick={this.toggleOpenState}
           text={<H3>{title}</H3>}
         />
         <Collapse isOpen={isOpen}>
-          <Card elevation={Elevation.TWO} style={{ width, minWidth }}>
+          <Card
+            elevation={Elevation.TWO}
+            style={{ width, minWidth, maxWidth: '900px' }}
+          >
             {children}
           </Card>
         </Collapse>

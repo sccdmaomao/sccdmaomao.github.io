@@ -13,7 +13,7 @@ export const StyledTitleText = styled(Text)`
   font-weight: bold;
 `
 
-export const StyledDescText = styled(Text)`
+export const StyledDescText = styled('pre')`
   width: 550px;
 `
 

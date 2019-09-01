@@ -4,7 +4,8 @@ import { ConnectedRouter } from 'connected-react-router'
 import React from 'react'
 import { addLocaleData, IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
-import Routes from 'routes'
+import { Route } from 'react-router-dom'
+import RouteWrapper from 'routes'
 import './global.css'
 import { history, store } from './store/initApp'
 
@@ -21,7 +22,7 @@ const AppContainer = () => {
       <IntlProvider locale={locale} messages={translations} key={locale}>
         <ConnectedRouter history={history}>
           <Layout>
-            <Routes />
+            <Route path="/" component={RouteWrapper} />
           </Layout>
         </ConnectedRouter>
       </IntlProvider>

@@ -33,8 +33,10 @@ const Experiences = () => {
                         </Text>
                     </TitleWrapper>
                     <StyledExtraText>{timeline.company}</StyledExtraText>
-                    {timeline.desc.map(text => (
-                        <StyledDescText>{text} </StyledDescText>
+                    {timeline.desc.map((text, i) => (
+                        <StyledDescText key={`experience-${i}`}>
+                            {text}
+                        </StyledDescText>
                     ))}
                 </StyledListItem>
             ))}

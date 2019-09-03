@@ -2,7 +2,7 @@ import '@blueprintjs/core/lib/css/blueprint.css'
 import Layout from 'components/Layout'
 import { ConnectedRouter } from 'connected-react-router'
 import React from 'react'
-import { addLocaleData, IntlProvider } from 'react-intl'
+import { IntlProvider } from 'react-intl'
 import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
 import RouteWrapper from 'routes'
@@ -12,8 +12,7 @@ import { history, store } from './store/initApp'
 const locale = 'en'
 /* tslint:disable */
 const translations = require(`./i18n/${locale}.json`)
-const i18n = require(`react-intl/locale-data/${locale}`)
-addLocaleData(i18n)
+require(`@formatjs/intl-relativetimeformat/dist/locale-data/${locale}`)
 /* tslint:enable */
 
 const AppContainer = () => {

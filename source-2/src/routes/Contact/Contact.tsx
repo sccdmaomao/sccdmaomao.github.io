@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyledContactWrapper, StyledPagePanel } from './ContactStyles'
+import { StyledPagePanel } from 'routes/RouteCommonStyles'
+import { StyledContactWrapper } from './ContactStyles'
 
 const Contact = () => {
     return (

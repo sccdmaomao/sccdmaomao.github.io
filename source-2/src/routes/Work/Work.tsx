@@ -3,10 +3,10 @@ import React from 'react'
 import {
     CircleWrapper,
     ContentWrapper,
-    StyledImg,
     StyledPagePanel,
     StyledTextWrapper
-} from './WorkStyles'
+} from 'routes/RouteCommonStyles'
+import { StyledImg } from './WorkStyles'
 
 const Work = () => {
     return (

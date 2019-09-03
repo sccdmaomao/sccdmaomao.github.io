@@ -1,19 +1,18 @@
 import { H4 } from '@blueprintjs/core'
 import React from 'react'
 import {
-    Circle,
     CircleWrapper,
+    ContentWrapper,
     StyledPagePanel,
-    StyledPortrait,
-    StyledTextContainer,
     StyledTextWrapper
-} from './BioStyles'
+} from 'routes/RouteCommonStyles'
+import { Circle, StyledPortrait } from './BioStyles'
 
 const Bio = () => {
     return (
         <StyledPagePanel>
             <StyledPortrait src="src/assets/portrait.jpg" />
-            <StyledTextContainer>
+            <ContentWrapper>
                 <StyledTextWrapper>
                     <CircleWrapper>
                         <Circle>
@@ -21,7 +20,7 @@ const Bio = () => {
                         </Circle>
                     </CircleWrapper>
                 </StyledTextWrapper>
-            </StyledTextContainer>
+            </ContentWrapper>
         </StyledPagePanel>
     )
 }

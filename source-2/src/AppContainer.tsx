@@ -17,17 +17,17 @@ addLocaleData(i18n)
 /* tslint:enable */
 
 const AppContainer = () => {
-  return (
-    <Provider store={store}>
-      <IntlProvider locale={locale} messages={translations} key={locale}>
-        <ConnectedRouter history={history}>
-          <Layout>
-            <Route path="/" component={RouteWrapper} />
-          </Layout>
-        </ConnectedRouter>
-      </IntlProvider>
-    </Provider>
-  )
+    return (
+        <Provider store={store}>
+            <IntlProvider locale={locale} messages={translations} key={locale}>
+                <ConnectedRouter history={history}>
+                    <Layout>
+                        <Route path="/" component={RouteWrapper} />
+                    </Layout>
+                </ConnectedRouter>
+            </IntlProvider>
+        </Provider>
+    )
 }
 
 export default AppContainer

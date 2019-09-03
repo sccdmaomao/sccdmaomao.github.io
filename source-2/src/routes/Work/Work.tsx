@@ -16,7 +16,6 @@ const Work = () => {
                     <CircleWrapper>
                         <StyledImg src="src/assets/work.png" />
                     </CircleWrapper>
-
                     <Experiences />
                 </StyledTextWrapper>
             </ContentWrapper>

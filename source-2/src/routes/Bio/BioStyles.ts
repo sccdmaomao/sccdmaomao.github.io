@@ -3,7 +3,8 @@ import styled from '@emotion/styled'
 export const StyledPortrait = styled('img')({
     maxWidth: '100%',
     height: '70vh',
-    borderRadius: '50px'
+    borderRadius: '50px',
+    marginRight: '40px'
 })
 
 export const Circle = styled('div')({

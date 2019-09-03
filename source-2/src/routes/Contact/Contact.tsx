@@ -1,15 +1,22 @@
 import React from 'react'
 import { StyledPagePanel } from 'routes/RouteCommonStyles'
-import { StyledContactWrapper } from './ContactStyles'
+import { StyledContactWrapper, StyledSocialIcons } from './ContactStyles'
 
 const Contact = () => {
     return (
         <StyledPagePanel>
             <StyledContactWrapper>
                 <div>
-                    Connect
-                    <i className="fab fa-github-square" />
-                    <i className="fab fa-linkedin" />
+                    <StyledSocialIcons
+                        className="fab fa-github-square"
+                        href={'https://github.com/sccdmaomao'}
+                        target="_blank"
+                    />
+                    <StyledSocialIcons
+                        className="fab fa-linkedin"
+                        href={'https://www.linkedin.com/in/guohao-yan/'}
+                        target="_blank"
+                    />
                 </div>
             </StyledContactWrapper>
         </StyledPagePanel>

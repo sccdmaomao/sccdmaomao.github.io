@@ -1,4 +1,5 @@
 import Experiences from 'components/Experiences'
+import { PageSections } from 'components/Nav/Nav'
 import React from 'react'
 import {
     CircleWrapper,
@@ -10,7 +11,7 @@ import { StyledImg } from './WorkStyles'
 
 const Work = () => {
     return (
-        <StyledPagePanel>
+        <StyledPagePanel id={PageSections.WORK}>
             <ContentWrapper>
                 <StyledTextWrapper>
                     <CircleWrapper>

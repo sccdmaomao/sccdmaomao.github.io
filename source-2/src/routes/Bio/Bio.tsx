@@ -1,4 +1,5 @@
 import { H4 } from '@blueprintjs/core'
+import { PageSections } from 'components/Nav/Nav'
 import React from 'react'
 import {
     CircleWrapper,
@@ -10,7 +11,7 @@ import { Circle, StyledPortrait } from './BioStyles'
 
 const Bio = () => {
     return (
-        <StyledPagePanel>
+        <StyledPagePanel id={PageSections.BIO}>
             <StyledPortrait src="src/assets/portrait.jpg" />
             <ContentWrapper>
                 <StyledTextWrapper>

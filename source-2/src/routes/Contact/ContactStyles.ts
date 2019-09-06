@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { heartbeat } from 'animation'
 
 export const StyledContactWrapper = styled('div')({
     width: '100%',
@@ -15,6 +16,7 @@ export const StyledSocialIcons = styled('a')({
     color: 'white',
     ':hover': {
         cursor: 'pointer',
-        color: '#E8E8E8'
+        color: '#E8E8E8',
+        animation: `${heartbeat} 1.5s ease-in-out infinite both`
     }
 })

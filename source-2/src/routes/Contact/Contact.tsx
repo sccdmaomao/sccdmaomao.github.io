@@ -1,10 +1,11 @@
+import { PageSections } from 'components/Nav/Nav'
 import React from 'react'
 import { StyledPagePanel } from 'routes/RouteCommonStyles'
 import { StyledContactWrapper, StyledSocialIcons } from './ContactStyles'
 
 const Contact = () => {
     return (
-        <StyledPagePanel>
+        <StyledPagePanel id={PageSections.CONTACT}>
             <StyledContactWrapper>
                 <div>
                     <StyledSocialIcons

@@ -57,6 +57,7 @@
     "lodash.replace": "^4.1.4",
     "moment": "^2.20.1",
     "react": "^16.3.2",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-apollo": "^2.0.1",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.3.2",

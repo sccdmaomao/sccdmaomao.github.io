@@ -31,7 +31,10 @@ jobs:
                   name: Checkout from cache
                   command: git checkout -f
             - restore_cache:
-                  keys: dependency-cache-{{ .Branch }}-{{ .Revision }}
+                  keys:
+                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
+                      - dependency-cache-{{ .Branch }
+                      - dependency-cache-
             - run: "yarn install"
             - run:
                   name: Unit Test

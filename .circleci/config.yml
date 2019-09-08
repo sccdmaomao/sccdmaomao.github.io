@@ -1,7 +1,7 @@
 version: 2
 jobs:
     checkout:
-        working_directory: ~/source-2
+        working_directory: ~/
         docker:
             - image: circleci/node:latest
         steps:
@@ -14,7 +14,7 @@ jobs:
                   paths:
                       - /node_modules/
     unit_test:
-        working_directory: ~/source-2
+        working_directory: ~/
         docker:
             - image: circleci/node:latest
         steps:

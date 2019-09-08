@@ -6,29 +6,29 @@ jobs:
             - image: circleci/node:latest
         steps:
             - restore_cache:
-              keys: dependency-cache-{{ checksum "package.json" }}
+                  keys: dependency-cache-{{ checksum "package.json" }}
             - checkout:
-              path: ~/source-2
+                  path: ~/source-2
             - save_cache:
-              keys: dependency-cache-{{ checksum "package.json" }}
-              path:
-                  - node_modules
+                  keys: dependency-cache-{{ checksum "package.json" }}
+                  path:
+                      - node_modules
     unit_test:
         working_directory: ~/source-2
         docker:
             - image: circleci/node:latest
         steps:
             - restore_cache:
-              keys: dependency-cache-{{ checksum "package.json" }}
+                  keys: dependency-cache-{{ checksum "package.json" }}
             - run:
-              name: Checkout from cache
-              command: git checkout -f
+                  name: Checkout from cache
+                  command: git checkout -f
             - restore_cache:
-              keys: dependency-cache-{{ checksum "package.json" }}
+                  keys: dependency-cache-{{ checksum "package.json" }}
             - run: "yarn install"
             - run:
-              name: Unit Test
-              command: yarn test --ci --runInBand
+                  name: Unit Test
+                  command: yarn test --ci --runInBand
 
 workflows:
     version: 2

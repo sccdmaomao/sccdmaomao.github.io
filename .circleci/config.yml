@@ -1,20 +1,20 @@
 version: 2
 jobs:
     checkout:
-        working_directory: ~/
+        working_directory: ~/repo
         docker:
             - image: circleci/node:latest
         steps:
             - restore_cache:
                   keys: dependency-cache-{{ checksum "package.json" }}
             - checkout:
-                  path: ~/
+                  path: ~/repo
             - save_cache:
                   key: dependency-cache-{{ checksum "package.json" }}
                   paths:
                       - /node_modules/
     unit_test:
-        working_directory: ~/
+        working_directory: ~/repo
         docker:
             - image: circleci/node:latest
         steps:

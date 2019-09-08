@@ -13,10 +13,8 @@ jobs:
             - checkout:
                   path: ~/repo
             - save_cache:
-                  keys:
+                  key:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
                   paths:
                       - /node_modules/
     unit_test:

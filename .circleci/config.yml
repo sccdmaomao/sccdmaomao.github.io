@@ -10,7 +10,7 @@ jobs:
             - checkout:
                   path: ~/source-2
             - save_cache:
-                  keys: dependency-cache-{{ checksum "package.json" }}
+                  key: dependency-cache-{{ checksum "package.json" }}
                   path:
                       - node_modules
     unit_test:

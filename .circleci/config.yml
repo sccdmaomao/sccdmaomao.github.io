@@ -21,14 +21,15 @@ jobs:
         docker:
             - image: circleci/node:latest
         steps:
+            - checkout
             - restore_cache:
                   keys:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
             - run:
-                  name: Clone GitHub repository
-                  command: git clone -b ${CIRCLE_BRANCH} --depth=1 --single-branch
+                  name: Checkout from cache
+                  command: git checkout -f
             - restore_cache:
                   keys: dependency-cache-{{ .Branch }}-{{ .Revision }}
             - run: "yarn install"

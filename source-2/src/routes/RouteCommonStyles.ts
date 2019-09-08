@@ -4,18 +4,24 @@ export const StyledPagePanel = styled('div')({
     width: '100vw',
     height: 'calc(100vh - 50px)',
     display: 'flex',
-    alignItems: 'center',
-    padding: '0 50px'
+    alignItems: 'center'
 })
 
-export const ContentWrapper = styled('div')({
+export const SectionWrapper = styled('div')({
+    display: 'flex',
+    width: '100%',
+    margin: '0 10%'
+})
+
+export const TextContentWrapper = styled('div')({
     backgroundColor: 'white',
     borderRadius: '20px',
     display: 'flex',
     justifyContent: 'center',
     padding: '40px',
     height: '70vh',
-    width: '100%'
+    width: '100%',
+    minWidth: '400px'
 })
 
 export const CircleWrapper = styled('div')({

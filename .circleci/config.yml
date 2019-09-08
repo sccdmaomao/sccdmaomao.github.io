@@ -11,7 +11,7 @@ jobs:
                   path: ~/source-2
             - save_cache:
                   key: dependency-cache-{{ checksum "package.json" }}
-                  path:
+                  paths:
                       - /node_modules/
     unit_test:
         working_directory: ~/source-2

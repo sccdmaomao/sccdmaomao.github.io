@@ -35,6 +35,7 @@ jobs:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
+            - run: "cd source-2"
             - run: "yarn install"
             - run:
                   name: Unit Test

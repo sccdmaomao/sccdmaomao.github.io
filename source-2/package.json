@@ -59,7 +59,7 @@
         "moment": "^2.20.1",
         "react": "^16.3.2",
         "react-anchor-link-smooth-scroll": "^1.0.12",
-        "react-apollo": "^2.0.1",
+        "react-apollo": "^3.1.0",
         "react-copy-to-clipboard": "^5.0.1",
         "react-dom": "^16.3.2",
         "react-intl": "^3.1.13",

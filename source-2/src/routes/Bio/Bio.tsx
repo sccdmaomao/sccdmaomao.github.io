@@ -16,7 +16,7 @@ const Bio = () => {
     return (
         <StyledPagePanel id={PageSections.BIO}>
             <SectionWrapper>
-                <StyledPortrait src="src/assets/portrait.jpg" />
+                <StyledPortrait src={require('assets/portrait.jpg')} />
                 <TextContentWrapper>
                     <StyledTextWrapper>
                         <CircleWrapper>

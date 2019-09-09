@@ -21,8 +21,8 @@ export enum PageSections {
 
 export const links: Array<{ text: string; to: string; icon?: IconName }> = [
     { text: 'About Me', to: `#${PageSections.BIO}`, icon: 'home' },
-    { text: 'Projects', to: `#${PageSections.WORK}`, icon: 'applications' },
-    { text: 'Contact', to: `#${PageSections.CONTACT}`, icon: 'new-person' }
+    { text: 'Experiences', to: `#${PageSections.WORK}`, icon: 'applications' },
+    { text: 'Contacts', to: `#${PageSections.CONTACT}`, icon: 'new-person' }
 ]
 
 interface NavState {

@@ -1,6 +1,7 @@
 import { H4 } from '@blueprintjs/core'
 import { PageSections } from 'components/Nav/Nav'
 import React from 'react'
+import Typing from 'react-typing-animation'
 import {
     CircleWrapper,
     SectionWrapper,
@@ -8,6 +9,7 @@ import {
     StyledTextWrapper,
     TextContentWrapper
 } from 'routes/RouteCommonStyles'
+import { bodyText } from 'texts/Biography'
 import { Circle, StyledPortrait } from './BioStyles'
 
 const Bio = () => {
@@ -22,6 +24,9 @@ const Bio = () => {
                                 <H4>Who</H4>
                             </Circle>
                         </CircleWrapper>
+                        <Typing speed={10}>
+                            <span>{bodyText}</span>
+                        </Typing>
                     </StyledTextWrapper>
                 </TextContentWrapper>
             </SectionWrapper>

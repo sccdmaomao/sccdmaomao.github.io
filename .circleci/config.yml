@@ -47,7 +47,7 @@ jobs:
                       - dependency-cache-
             - run:
                   name: Compile
-                  command: yarn compile
+                  command: "cd source-2 && yarn compile"
 workflows:
     version: 2
     build_and_test:

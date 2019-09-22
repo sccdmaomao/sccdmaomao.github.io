@@ -34,7 +34,20 @@ jobs:
             - run:
                   name: Unit Test
                   command: cd source-2 && yarn test --ci --runInBand
-
+    compile:
+        working_directory: ~/repo/
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
+                      - dependency-cache-{{ .Branch }
+                      - dependency-cache-
+            - run:
+                  name: Compile
+                  command: yarn compile
 workflows:
     version: 2
     build_and_test:
@@ -43,3 +56,6 @@ workflows:
             - unit_test:
                   requires:
                       - checkout
+            - compile:
+                  requires:
+                      - unit_test

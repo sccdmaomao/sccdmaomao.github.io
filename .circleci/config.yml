@@ -1,7 +1,7 @@
 version: 2
 jobs:
     checkout:
-        working_directory: ~/repo/source-2
+        working_directory: ~/repo
         docker:
             - image: circleci/node:latest
         steps:
@@ -30,10 +30,10 @@ jobs:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
-            - run: "cd source-2 && yarn install"
+            - run: "yarn install"
             - run:
                   name: Unit Test
-                  command: cd source-2 && yarn test --ci --runInBand
+                  command: yarn test --ci --runInBand
     compile:
         working_directory: ~/repo/
         docker:
@@ -47,7 +47,7 @@ jobs:
                       - dependency-cache-
             - run:
                   name: Compile
-                  command: "cd source-2 && yarn install && yarn compile"
+                  command: "yarn install && yarn compile"
 workflows:
     version: 2
     build_and_test:

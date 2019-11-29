@@ -1,8 +1,0 @@
-*:focus {
-  outline: none;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(#383932, #2d2e28);
-}

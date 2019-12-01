@@ -60,6 +60,9 @@ jobs:
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
             - run:
+                  name: Install
+                  command: 'yarn install'
+            - run:
                   name: Deploy
                   command: 'yarn deploy'
 workflows:

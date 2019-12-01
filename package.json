@@ -22,7 +22,7 @@
         "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
         "svg": "yarn optimize-svg && yarn reactify-svg",
         "lint": "tslint --project tsconfig.json --config tslint.json",
-        "deploy": "yarn build:prod && $(yarn bin)/git-directory-deploy --directory dist"
+        "deploy": "yarn build:prod:quiet && $(yarn bin)/git-directory-deploy --directory dist"
     },
     "lint-staged": {
         "*.{ts,tsx,css}": [

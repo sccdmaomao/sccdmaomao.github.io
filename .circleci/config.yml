@@ -30,7 +30,7 @@ jobs:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
-            - run: "yarn install"
+            - run: 'yarn install'
             - run:
                   name: Unit Test
                   command: yarn test --ci --runInBand
@@ -47,7 +47,21 @@ jobs:
                       - dependency-cache-
             - run:
                   name: Compile
-                  command: "yarn install && yarn compile"
+                  command: 'yarn install && yarn compile'
+    deploy:
+        working_directory: ~/repo/
+        docker:
+            - image: circleci/node:latest
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
+                      - dependency-cache-{{ .Branch }
+                      - dependency-cache-
+            - run:
+                  name: Deploy
+                  command: 'yarn deploy'
 workflows:
     version: 2
     build_and_test:
@@ -59,3 +73,6 @@ workflows:
             - compile:
                   requires:
                       - unit_test
+            - deploy:
+                  requires:
+                      - compile

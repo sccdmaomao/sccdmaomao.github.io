@@ -59,9 +59,16 @@ jobs:
                       - dependency-cache-{{ .Branch }}-{{ .Revision }}
                       - dependency-cache-{{ .Branch }
                       - dependency-cache-
+            - add_ssh_keys:
+                  fingerprints:
+                      - 'bf:5a:5d:47:40:00:ee:05:4c:f6:59:9c:82:e3:ff:ff'
             - run:
                   name: Install
-                  command: 'yarn install'
+                  command: |
+                      yarn install
+                      git config user.email "sccdmaomao@hotmail.com"
+                      git config user.name "ci-build"
+
             - run:
                   name: Deploy
                   command: 'yarn deploy'

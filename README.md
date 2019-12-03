@@ -3,11 +3,7 @@
 
 # Todos
 
-* Set up CI
-
-* auto deploy script to gh-pages
-
-* remove deprecated source code
+* Fix asset path
 
 * update dependencies
 

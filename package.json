@@ -46,7 +46,7 @@
         "@types/react-dom": "^16.0.3",
         "@types/react-redux": "^7.1.1",
         "@types/react-router-dom": "^4.3.4",
-        "@types/redux-form": "^8.1.4",
+        "@types/redux-form": "^8.2.1",
         "apollo-link-http": "^1.2.0",
         "babel-plugin-emotion": "^10.0.14",
         "connected-react-router": "^6.5.2",

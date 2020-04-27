@@ -91,7 +91,7 @@
         "babel-jest": "^22.0.3",
         "babel-loader": "^7.1.2",
         "babel-preset-react": "^6.24.1",
-        "css-loader": "^0.28.7",
+        "css-loader": "^3.5.3",
         "electrode-bundle-analyzer": "^1.0.0",
         "file-loader": "^1.1.5",
         "git-directory-deploy": "^1.5.1",

@@ -1272,9 +1272,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/redux-form@^8.1.4":
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/@types/redux-form/-/redux-form-8.1.4.tgz#bfef3552b9fa5a2e42f2938e484279a035b11807"
+"@types/redux-form@^8.2.6":
+  version "8.2.6"
+  resolved "https://registry.yarnpkg.com/@types/redux-form/-/redux-form-8.2.6.tgz#dd67db05302da78cc338af43b557ca7b3572cea8"
+  integrity sha512-cwP8l2W6oDvi5i9q8rIH34PCV/ZtFTaWqdMnhT84jEFdbkD/jRvuL7hd3Q93y/SMvPedZUk0G9F7hDgAU049xQ==
   dependencies:
     "@types/react" "*"
     redux "^3.6.0 || ^4.0.0"

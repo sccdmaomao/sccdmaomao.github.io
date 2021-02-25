@@ -8,44 +8,13 @@ jobs:
             - checkout:
                   path: ~/repo
 
-    install:
-        working_directory: ~/repo
-        docker:
-            - image: circleci/node:latest
-        steps:
-            - checkout:
-                  path: ~/repo
-            - restore_cache:
-                  keys:
-                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
-            - run:
-                  name: Yarn install
-                  command: yarn install
-            - save_cache:
-                  key: dependency-cache-{{ .Branch }}-{{ .Revision }}
-                  paths:
-                      - /node_modules/
     unit_test:
         working_directory: ~/repo/
         docker:
             - image: circleci/node:latest
         steps:
             - checkout
-            - restore_cache:
-                  keys:
-                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
-            - run:
-                  name: Checkout from cache
-                  command: git checkout -f
-            - restore_cache:
-                  keys:
-                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
+            - install-packages
             - run:
                   name: Unit Test
                   command: yarn test --ci --runInBand
@@ -55,11 +24,7 @@ jobs:
             - image: circleci/node:latest
         steps:
             - checkout
-            - restore_cache:
-                  keys:
-                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
+            - install-packages
             - run:
                   name: Compile
                   command: 'yarn compile'
@@ -69,17 +34,7 @@ jobs:
             - image: circleci/node:latest
         steps:
             - checkout
-            - restore_cache:
-                  keys:
-                      - dependency-cache-{{ .Branch }}-{{ .Revision }}
-                      - dependency-cache-{{ .Branch }
-                      - dependency-cache-
-            - run:
-                  name: Install
-                  command: |
-                      yarn install
-                      git config user.email "sccdmaomao@hotmail.com"
-                      git config user.name "ci-build"
+            - install-packages
             - run:
                   name: Deploy
                   command: 'yarn deploy'
@@ -88,12 +43,9 @@ workflows:
     build_and_test:
         jobs:
             - checkout
-            - install:
-                  requires: 
-                      - checkout
             - unit_test:
                   requires:
-                      - install
+                      - checkout
             - compile:
                   requires:
                       - unit_test

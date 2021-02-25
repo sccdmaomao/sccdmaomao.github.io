@@ -7,10 +7,6 @@ jobs:
         steps:
             - checkout:
                   path: ~/repo
-            - save_cache:
-                  key: dependency-cache-{{ .Branch }}-{{ .Revision }}
-                  paths:
-                      - /node_modules/
 
     install:
         working_directory: ~/repo

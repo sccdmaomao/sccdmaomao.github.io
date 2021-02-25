@@ -35,6 +35,7 @@ jobs:
                   name: Restore Yarn Package Cache
                   keys:
                         - yarn-packages-{{ checksum "yarn.lock" }}
+            - install
             - run:
                   name: Unit Test
                   command: yarn test --ci --runInBand
@@ -48,6 +49,7 @@ jobs:
                   name: Restore Yarn Package Cache
                   keys:
                         - yarn-packages-{{ checksum "yarn.lock" }}
+            - install
             - run:
                   name: Compile
                   command: 'yarn compile'
@@ -61,6 +63,7 @@ jobs:
                   name: Restore Yarn Package Cache
                   keys:
                         - yarn-packages-{{ checksum "yarn.lock" }}
+            - install
             - run:
                   name: Deploy
                   command: 'yarn deploy'

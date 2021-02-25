@@ -7,12 +7,16 @@ jobs:
         steps:
             - checkout:
                   path: ~/repo
-    install:
+    unit_test:
         working_directory: ~/repo/
         docker:
             - image: circleci/node:latest
         steps:
             - checkout
+            - restore_cache:
+                  name: Restore Yarn Package Cache
+                  keys:
+                        - yarn-packages-{{ checksum "yarn.lock" }}
             - restore_cache:
                   name: Restore Yarn Package Cache
                   keys:
@@ -25,17 +29,6 @@ jobs:
                   key: yarn-packages-{{ checksum "yarn.lock" }}
                   paths:
                         - ~/.cache/yarn
-    unit_test:
-        working_directory: ~/repo/
-        docker:
-            - image: circleci/node:latest
-        steps:
-            - checkout
-            - restore_cache:
-                  name: Restore Yarn Package Cache
-                  keys:
-                        - yarn-packages-{{ checksum "yarn.lock" }}
-            - install
             - run:
                   name: Unit Test
                   command: yarn test --ci --runInBand
@@ -49,7 +42,18 @@ jobs:
                   name: Restore Yarn Package Cache
                   keys:
                         - yarn-packages-{{ checksum "yarn.lock" }}
-            - install
+            - restore_cache:
+                  name: Restore Yarn Package Cache
+                  keys:
+                        - yarn-packages-{{ checksum "yarn.lock" }}
+            - run:
+                  name: Install Dependencies
+                  command: yarn install --immutable
+            - save_cache:
+                  name: Save Yarn Package Cache
+                  key: yarn-packages-{{ checksum "yarn.lock" }}
+                  paths:
+                        - ~/.cache/yarn
             - run:
                   name: Compile
                   command: 'yarn compile'
@@ -63,7 +67,18 @@ jobs:
                   name: Restore Yarn Package Cache
                   keys:
                         - yarn-packages-{{ checksum "yarn.lock" }}
-            - install
+            - restore_cache:
+                  name: Restore Yarn Package Cache
+                  keys:
+                        - yarn-packages-{{ checksum "yarn.lock" }}
+            - run:
+                  name: Install Dependencies
+                  command: yarn install --immutable
+            - save_cache:
+                  name: Save Yarn Package Cache
+                  key: yarn-packages-{{ checksum "yarn.lock" }}
+                  paths:
+                        - ~/.cache/yarn
             - run:
                   name: Deploy
                   command: 'yarn deploy'
@@ -72,15 +87,12 @@ workflows:
     build_and_test:
         jobs:
             - checkout
-            - install:
-                  requires:
-                      - checkout
             - unit_test:
                   requires:
-                      - install
+                      - checkout
             - compile:
                   requires:
-                      - install
+                      - checkout
             - deploy:
                   requires:
                       - compile

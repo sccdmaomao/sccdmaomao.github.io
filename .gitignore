@@ -10,6 +10,7 @@ dist
 .idea/
 .vscode
 .env
+.yarn
 
 *.d.ts
 

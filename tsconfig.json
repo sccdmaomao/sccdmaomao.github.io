@@ -1,7 +1,6 @@
 {
+  "extends": "./node_modules/@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
-    "module": "es6",
-    "target": "es6",
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "sourceMap": true,
@@ -10,7 +9,8 @@
     "moduleResolution": "node",
     "lib": ["es6", "es7", "dom"],
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "noImplicitAny": false,
   },
   "exclude": ["node_modules"]
 }

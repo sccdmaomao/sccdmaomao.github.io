@@ -14,7 +14,8 @@ jobs:
             - image: circleci/node:latest
         steps:
             - checkout
-            - install-packages
+            - node/install-packages:
+                  override-ci-command: yarn install
             - run:
                   name: Unit Test
                   command: yarn test --ci --runInBand
@@ -24,7 +25,8 @@ jobs:
             - image: circleci/node:latest
         steps:
             - checkout
-            - install-packages
+            - node/install-packages:
+                  override-ci-command: yarn install
             - run:
                   name: Compile
                   command: 'yarn compile'
@@ -34,7 +36,8 @@ jobs:
             - image: circleci/node:latest
         steps:
             - checkout
-            - install-packages
+            - node/install-packages:
+                  override-ci-command: yarn install
             - run:
                   name: Deploy
                   command: 'yarn deploy'

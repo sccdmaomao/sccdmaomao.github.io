@@ -29,8 +29,8 @@ interface NavState {
     selectedTabId: string
 }
 
-class Nav extends Component<{}, NavState> {
-    public constructor(props) {
+class Nav extends Component<Record<string, never>, NavState> {
+    public constructor(props: never) {
         super(props)
         this.state = {
             selectedTabId: ''

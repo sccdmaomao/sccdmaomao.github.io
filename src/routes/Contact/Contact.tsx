@@ -3,7 +3,7 @@ import React from 'react'
 import { StyledPagePanel } from 'routes/RouteCommonStyles'
 import { StyledContactWrapper, StyledSocialIcons } from './ContactStyles'
 
-const Contact = () => {
+const Contact: React.FC = () => {
     return (
         <StyledPagePanel id={PageSections.CONTACT}>
             <StyledContactWrapper>

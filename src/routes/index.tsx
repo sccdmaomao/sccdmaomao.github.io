@@ -8,7 +8,7 @@ const PaddedDiv = styled('div')({
     paddingTop: '50px'
 })
 
-const RoutesWrapper: React.FunctionComponent<{}> = () => {
+const RoutesWrapper: React.FunctionComponent<{ never }> = () => {
     return (
         <PaddedDiv>
             <Bio />

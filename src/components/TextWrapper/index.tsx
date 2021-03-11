@@ -5,7 +5,7 @@ interface TextWrapperProps {
     componentSegments: JSX.Element[]
 }
 
-const TextWrapper = (props: TextWrapperProps) => {
+const TextWrapper: React.FC<TextWrapperProps> = props => {
     const { textSegments, componentSegments } = props
     const wrapper: JSX.Element[] = []
 

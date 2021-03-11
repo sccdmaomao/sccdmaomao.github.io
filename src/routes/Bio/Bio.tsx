@@ -12,7 +12,7 @@ import {
 import { bodyText } from 'texts/Biography'
 import { Circle, StyledPortrait } from './BioStyles'
 
-const Bio = () => {
+const Bio: React.FC = () => {
     return (
         <StyledPagePanel id={PageSections.BIO}>
             <SectionWrapper>

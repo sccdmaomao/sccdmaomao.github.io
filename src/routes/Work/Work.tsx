@@ -10,7 +10,7 @@ import {
 } from 'routes/RouteCommonStyles'
 import { StyledImg } from './WorkStyles'
 
-const Work = () => {
+const Work: React.FC = () => {
     return (
         <StyledPagePanel id={PageSections.WORK}>
             <SectionWrapper>

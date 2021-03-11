@@ -20,9 +20,9 @@ export const StyledExtraText = styled(Text)`
 `
 
 export const StyledUl = styled('ul')({
-  position: 'relative',
-  top: '-50px',
-  padding: '0',
-  margin: '0',
-  listStyle: 'square'
+    position: 'relative',
+    top: '-50px',
+    padding: '0',
+    margin: '0',
+    listStyle: 'square'
 })

@@ -20,6 +20,7 @@
         "reactify-svg": "find ./src/components/Icons -name \"*.svg\" -execdir svgtoreact dir \\;",
         "svg": "yarn optimize-svg && yarn reactify-svg",
         "lint": "eslint . --ext .ts,.tsx",
+        "lint:fix":  "eslint . --ext .ts,.tsx  --fix",
         "deploy": "yarn build:prod:quiet && ./node_modules/.bin/git-directory-deploy --directory dist"
     },
     "lint-staged": {
@@ -92,6 +93,7 @@
         "css-loader": "^0.28.7",
         "electrode-bundle-analyzer": "^1.0.0",
         "eslint": "^7.20.0",
+        "eslint-plugin-prettier": "^3.3.1",
         "file-loader": "^1.1.5",
         "git-directory-deploy": "^1.5.1",
         "html-webpack-plugin": "^3.2.0",

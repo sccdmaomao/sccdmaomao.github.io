@@ -6,12 +6,13 @@ import {
     NavbarDivider,
     NavbarGroup,
     NavbarHeading,
-    Tab,
-    Tabs
+    Tabs,
+    Tab
 } from '@blueprintjs/core'
 import classnames from 'classnames'
 import React, { Component } from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import {Tab ,Tabs} from '@material-ui/core';
 
 export enum PageSections {
     BIO = 'BIO',
@@ -36,6 +37,7 @@ class Nav extends Component<Record<string, never>, NavState> {
             selectedTabId: ''
         }
     }
+
     public render() {
         const { selectedTabId } = this.state
         return (

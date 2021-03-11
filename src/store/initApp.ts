@@ -7,15 +7,15 @@ import { reducer as formReducer } from 'redux-form'
 
 export const history = createBrowserHistory()
 const reducers = {
-  router: connectRouter(history),
-  form: formReducer,
-  loadingBar: loadingBarReducer
+    router: connectRouter(history),
+    form: formReducer,
+    loadingBar: loadingBarReducer
 }
 
 const reducer = combineReducers(reducers)
 
 const middlewareEnhancer = composeWithDevTools(
-  applyMiddleware(routerMiddleware(history))
+    applyMiddleware(routerMiddleware(history))
 )
 const composedEnhancers = compose(middlewareEnhancer)
 

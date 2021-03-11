@@ -10,13 +10,12 @@ import {
     TextContentWrapper
 } from 'routes/RouteCommonStyles'
 import { bodyText } from 'texts/Biography'
-import { Circle, StyledPortrait } from './BioStyles'
+import { Circle } from './BioStyles'
 
 const Bio: React.FC = () => {
     return (
         <StyledPagePanel id={PageSections.BIO}>
             <SectionWrapper>
-                <StyledPortrait src={require('assets/portrait.jpg')} />
                 <TextContentWrapper>
                     <StyledTextWrapper>
                         <CircleWrapper>

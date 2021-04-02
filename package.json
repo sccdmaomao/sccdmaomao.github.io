@@ -112,7 +112,7 @@
         "svg-to-react-cli": "^1.5.0",
         "svgo": "^1.0.3",
         "ts-jest": "^24.0.2",
-        "ts-loader": "^4.1.0",
+        "ts-loader": "^8.1.0",
         "tslint": "^5.8.0",
         "tslint-config-prettier": "^1.6.0",
         "tslint-plugin-prettier": "^1.3.0",

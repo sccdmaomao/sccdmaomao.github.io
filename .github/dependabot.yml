@@ -1,0 +1,111 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - sccdmaomao
+  assignees:
+  - sccdmaomao
+  ignore:
+  - dependency-name: ts-loader
+    versions:
+    - 8.0.17
+    - 8.0.18
+    - 8.1.0
+    - 9.1.0
+  - dependency-name: css-loader
+    versions:
+    - 5.0.1
+    - 5.0.2
+    - 5.1.0
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+    - 5.2.1
+  - dependency-name: husky
+    versions:
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+  - dependency-name: react-stickynode
+    versions:
+    - 3.0.4
+  - dependency-name: webpack-cli
+    versions:
+    - 4.5.0
+  - dependency-name: typescript
+    versions:
+    - 4.1.3
+    - 4.1.4
+    - 4.1.5
+    - 4.2.2
+  - dependency-name: "@storybook/addon-actions"
+    versions:
+    - 6.1.15
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.19
+    - 6.1.20
+  - dependency-name: react-apollo
+    versions:
+    - 3.1.5
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+    - 14.14.25
+    - 14.14.27
+    - 14.14.28
+    - 14.14.30
+    - 14.14.31
+  - dependency-name: "@types/react"
+    versions:
+    - 16.14.2
+    - 16.14.3
+    - 16.14.4
+    - 17.0.2
+  - dependency-name: ini
+    versions:
+    - 1.3.7
+  - dependency-name: "@emotion/core"
+    versions:
+    - 10.1.1
+  - dependency-name: react
+    versions:
+    - 16.14.0
+  - dependency-name: yarn
+    versions:
+    - 1.22.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+    - 4.17.21
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+    - 4.7.7
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+    - 6.5.4
+  - dependency-name: "@types/redux-form"
+    versions:
+    - 8.3.1
+  - dependency-name: http-proxy
+    versions:
+    - 1.18.1
+  - dependency-name: dot-prop
+    versions:
+    - 4.2.1
+  - dependency-name: websocket-extensions
+    versions:
+    - 0.1.4
+  - dependency-name: tslint
+    versions:
+    - 5.20.1
